@@ -28,33 +28,169 @@
         
         <style type="text/css">
             body {
+                background: url('./blueprint.jpg') fixed;
                 margin: 0px;
+				font-family: Geneva, Arial, Helvetica, sans-serif;
             }
-            .header-menu {
-                background: #006290;
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0px;
+			}
+			.floatleft {
+				float: left;
+			}
+			.floatright {
+				float: right;
+			}
+			.maxwidth {
+				width: 900px;
+				margin: 0px auto;
+			}
+			.textarea-wrapper {
+				border: 1px solid #000;
+				padding: 5px;
+				background: #FFF;
+			}
+			#header {
+				position: absolute;
+				width: 100%;
+			}
+            .header-menu-wrapper {
+                background: #00789D;
                 height: 50px;
                 position: absolute;
-                top: 70px;
+                top: 47%;
                 left: 0px;
                 width: 100%;
+				margin-top: -25px;
             }
+			.header-menu {
+				height: 50px;
+				border-width: 0px 1px;
+				margin: auto;
+			}
+			.header-menu a {
+				color: #FFF;
+				padding: 5px 15px;
+				line-height: 40px;
+				cursor: pointer;
+				font-size: 17px;
+				min-width: 68px;
+				text-align: center;
+				text-decoration: none;
+			}
+			.header-menu a:hover {
+				background: #00566f;
+			}
+			#logo {
+				width: 270px;
+				display: block;
+				margin: 0px auto;
+				position: relative;
+			}
             #idea {
-                background: url('./blueprint.jpg');
-                min-height: 200px;
+				padding: 360px 0 50px;
+				text-align: center;
             }
+			#idea h1 {
+				margin: 0px auto;
+				color: #FFF;
+				font-size: 32px;
+			}
+			#idea button {
+				margin-top: 30px;
+				background: transparent;
+				border: 3px solid #0094FF;
+				padding: 10px 15px;
+				font-weight: bold;
+				font-size: 16px;
+				color: #FFF;
+				text-transform: uppercase;
+				cursor: pointer;
+			}
+			#idea button:hover {
+				background: #00789D;
+			}
+			#activities {
+				background: #e6e6e6;
+				height: 500px;
+				padding: 50px 0px 50px;
+			}
+			#activities h3 {
+				margin: 0px auto;
+				color: #2d2d2d;
+				font-size: 30px;
+				text-align: center;
+			}
+			#news {
+				background: #00789D;
+				height: 500px;
+				padding: 50px 0px 50px;
+			}
+			#news h3 {
+				margin: 0px auto;
+				color: #FFF;
+				font-size: 30px;
+				text-align: center;
+			}
+			#feedback {
+				height: 500px;
+				padding: 50px 0px 50px;
+			}
+			#feedback h3 {
+				margin: 0px auto 40px;
+				color: #FFF;
+				font-size: 30px;
+				text-align: center;
+			}
+			#feedback textarea {
+				width: 100%;
+				border: 0px;
+				padding: 0px;
+				min-height: 180px;
+			}
+			#footer {
+				height: 200px;
+				background: #303135;
+			}
         </style>
     </head>
-
-
 	<body>
         <header id="header">
-            <div class="header-menu"></div>
+            <div class="header-menu-wrapper">
+				<nav class="header-menu maxwidth">
+					<a class="header-menu-button floatleft" href="#">Главная</a>
+					<a class="header-menu-button floatleft" href="#">Новости</a>
+					<a class="header-menu-button floatleft" href="#">Проекты</a>
+					<a class="header-menu-button floatright" href="#">Контакты</a>
+					<a class="header-menu-button floatright" href="#">Услуги</a>
+					<a class="header-menu-button floatright" href="#">Статьи</a>
+				</nav>
+			</div>
+			<img id="logo" src="./logo-white.png" alt="ЦМИТ ФабЛаб ТюмГУ">
         </header>
         <section id="idea">
+			<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
+			<button type="button">Подробнее</button>
         </section>
         <section id="activities">
+			<h3>Деятельность</h3>
+			<div class="maxwidth">
+				
+			</div>
         </section>
         <section id="news">
+			<h3>Новости</h3>
+			<div class="maxwidth">
+				
+			</div>
+        </section>
+		<section id="feedback">
+			<h3>Напишите нам</h3>
+			<div class="maxwidth">
+				<div class="textarea-wrapper">
+					<textarea placeholder="Ваше сообщение"></textarea>
+				</div>
+			</div>
         </section>
         <footer id="footer">
         </footer>
