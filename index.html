@@ -27,8 +27,9 @@
         <meta name="generator" content="WordPress 4.5.3" />
         
         <style type="text/css">
+			/* ====== COMMON STYLES ====== */
             body {
-                background: url('./blueprint.jpg') fixed;
+                background: #010c4b url('./blueprint.jpg') fixed;
                 margin: 0px;
 				font-family: Geneva, Arial, Helvetica, sans-serif;
             }
@@ -41,6 +42,9 @@
 			.floatright {
 				float: right;
 			}
+			.clear {
+				clear: both;
+			}
 			.maxwidth {
 				width: 900px;
 				margin: 0px auto;
@@ -50,6 +54,7 @@
 				padding: 5px;
 				background: #FFF;
 			}
+			/* ====== HEADER ====== */
 			#header {
 				position: absolute;
 				width: 100%;
@@ -81,14 +86,20 @@
 			.header-menu a:hover {
 				background: #00566f;
 			}
+			.logo-link {
+				text-decoration: none;
+				display: block;
+				margin: 0px auto;
+			}
 			#logo {
 				width: 270px;
 				display: block;
 				margin: 0px auto;
 				position: relative;
 			}
+			/* ====== IDEA SECTION ====== */
             #idea {
-				padding: 360px 0 50px;
+				padding: 340px 0 50px;
 				text-align: center;
             }
 			#idea h1 {
@@ -108,11 +119,12 @@
 				cursor: pointer;
 			}
 			#idea button:hover {
-				background: #00789D;
+				background: #055196;
 			}
+			/* ====== ACTIVITIES SECTION ====== */
 			#activities {
 				background: #e6e6e6;
-				height: 500px;
+				min-height: 500px;
 				padding: 50px 0px 50px;
 			}
 			#activities h3 {
@@ -121,6 +133,34 @@
 				font-size: 30px;
 				text-align: center;
 			}
+			.activities-wrapper {
+				margin-top: 30px;
+			}
+			#activities figure {
+				position: relative;
+				width: 200px;
+				margin: 12px;
+				float: left;
+				/*background: red;*/
+			}
+			.gear {
+				width: 200px;
+				height: 200px;
+				background: url('./gear.png');
+				position: absolute;
+			}
+			#activities figure img {
+				margin: 44px;
+				width: 112px;
+				height: 112px;
+			}
+			#activities figure h6 {
+				text-align: center;
+				font-size: 20px;
+				margin: 20px 0px 0px;
+				color: #4a4a4a;
+			}
+			/* ====== NEWS SECTION ====== */
 			#news {
 				background: #00789D;
 				height: 500px;
@@ -132,6 +172,7 @@
 				font-size: 30px;
 				text-align: center;
 			}
+			/* ====== FEEDBACK SECTION ====== */
 			#feedback {
 				height: 500px;
 				padding: 50px 0px 50px;
@@ -148,6 +189,7 @@
 				padding: 0px;
 				min-height: 180px;
 			}
+			/* ====== FOOTER ====== */
 			#footer {
 				height: 200px;
 				background: #303135;
@@ -165,8 +207,9 @@
 					<a class="header-menu-button floatright" href="#">Услуги</a>
 					<a class="header-menu-button floatright" href="#">Статьи</a>
 				</nav>
+				<div class="clear"></div>
 			</div>
-			<img id="logo" src="./logo-white.png" alt="ЦМИТ ФабЛаб ТюмГУ">
+			<a class="logo-link" href="#"><img id="logo" src="./logo-white.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
         </header>
         <section id="idea">
 			<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
@@ -174,8 +217,56 @@
         </section>
         <section id="activities">
 			<h3>Деятельность</h3>
-			<div class="maxwidth">
-				
+			<div class="activities-wrapper maxwidth">
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure>
+					<div class="gear"></div>
+					<img src="./square-image.jpg" alt="Работа с детьми">
+					<h6>Работа с детьми</h6>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<div class="clear"></div>
 			</div>
         </section>
         <section id="news">
@@ -188,7 +279,13 @@
 			<h3>Напишите нам</h3>
 			<div class="maxwidth">
 				<div class="textarea-wrapper">
-					<textarea placeholder="Ваше сообщение"></textarea>
+					<textarea placeholder="Ваше сообщение">
+TODO:
+- Адаптация под мобильные устройства
+- Секция новостей
+- Форма обратной связи
+- Нижняя часть страницы (footer)
+					</textarea>
 				</div>
 			</div>
         </section>
