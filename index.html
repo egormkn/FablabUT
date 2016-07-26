@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link rel="pingback" href="http://fablabut/xmlrpc.php">
-        
-        <script type="text/javascript">
-        /**
-        * @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
-        */
-        !function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=y.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=y.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),y.elements=c+" "+a,j(b)}function f(a){var b=x[a[v]];return b||(b={},w++,a[v]=w,x[w]=b),b}function g(a,c,d){if(c||(c=b),q)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():u.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||t.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),q)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return y.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(y,b.frag)}function j(a){a||(a=b);var d=f(a);return!y.shivCSS||p||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),q||i(a,d),a}function k(a){for(var b,c=a.getElementsByTagName("*"),e=c.length,f=RegExp("^(?:"+d().join("|")+")$","i"),g=[];e--;)b=c[e],f.test(b.nodeName)&&g.push(b.applyElement(l(b)));return g}function l(a){for(var b,c=a.attributes,d=c.length,e=a.ownerDocument.createElement(A+":"+a.nodeName);d--;)b=c[d],b.specified&&e.setAttribute(b.nodeName,b.nodeValue);return e.style.cssText=a.style.cssText,e}function m(a){for(var b,c=a.split("{"),e=c.length,f=RegExp("(^|[\\s,>+~])("+d().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),g="$1"+A+"\\:$2";e--;)b=c[e]=c[e].split("}"),b[b.length-1]=b[b.length-1].replace(f,g),c[e]=b.join("}");return c.join("{")}function n(a){for(var b=a.length;b--;)a[b].removeNode()}function o(a){function b(){clearTimeout(g._removeSheetTimer),d&&d.removeNode(!0),d=null}var d,e,g=f(a),h=a.namespaces,i=a.parentWindow;return!B||a.printShived?a:("undefined"==typeof h[A]&&h.add(A),i.attachEvent("onbeforeprint",function(){b();for(var f,g,h,i=a.styleSheets,j=[],l=i.length,n=Array(l);l--;)n[l]=i[l];for(;h=n.pop();)if(!h.disabled&&z.test(h.media)){try{f=h.imports,g=f.length}catch(o){g=0}for(l=0;g>l;l++)n.push(f[l]);try{j.push(h.cssText)}catch(o){}}j=m(j.reverse().join("")),e=k(a),d=c(a,j)}),i.attachEvent("onafterprint",function(){n(e),clearTimeout(g._removeSheetTimer),g._removeSheetTimer=setTimeout(b,500)}),a.printShived=!0,a)}var p,q,r="3.7.3",s=a.html5||{},t=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,u=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,v="_html5shiv",w=0,x={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",p="hidden"in a,q=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){p=!0,q=!0}}();var y={elements:s.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:r,shivCSS:s.shivCSS!==!1,supportsUnknownElements:q,shivMethods:s.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=y,j(b);var z=/^$|\b(?:all|print)\b/,A="html5shiv",B=!q&&function(){var c=b.documentElement;return!("undefined"==typeof b.namespaces||"undefined"==typeof b.parentWindow||"undefined"==typeof c.applyElement||"undefined"==typeof c.removeNode||"undefined"==typeof a.attachEvent)}();y.type+=" print",y.shivPrint=o,o(b),"object"==typeof module&&module.exports&&(module.exports=y)}("undefined"!=typeof window?window:this,document);
-        </script>
-        
-        <!--[if lt IE 9]>
-        <link rel="stylesheet" href="http://fablabut/wp-content/themes/zerif-lite/css/ie.css" type="text/css">
-        <![endif]-->
-
-        <title>ЦМИТ ФабЛаб ТюмГУ &#8212; Ещё один сайт на WordPress</title>
-        <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
-        <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />
-        <link rel='https://api.w.org/' href='http://fablabut/?rest_route=/' />
-        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fablabut/xmlrpc.php?rsd" />
-        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fablabut/wp-includes/wlwmanifest.xml" /> 
-        <meta name="generator" content="WordPress 4.5.3" />
-        
-        <style type="text/css">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://fablabut/xmlrpc.php">
+		
+		<script type="text/javascript">
+		/**
+		* @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+		*/
+		!function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=y.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=y.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),y.elements=c+" "+a,j(b)}function f(a){var b=x[a[v]];return b||(b={},w++,a[v]=w,x[w]=b),b}function g(a,c,d){if(c||(c=b),q)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():u.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||t.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),q)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return y.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(y,b.frag)}function j(a){a||(a=b);var d=f(a);return!y.shivCSS||p||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),q||i(a,d),a}function k(a){for(var b,c=a.getElementsByTagName("*"),e=c.length,f=RegExp("^(?:"+d().join("|")+")$","i"),g=[];e--;)b=c[e],f.test(b.nodeName)&&g.push(b.applyElement(l(b)));return g}function l(a){for(var b,c=a.attributes,d=c.length,e=a.ownerDocument.createElement(A+":"+a.nodeName);d--;)b=c[d],b.specified&&e.setAttribute(b.nodeName,b.nodeValue);return e.style.cssText=a.style.cssText,e}function m(a){for(var b,c=a.split("{"),e=c.length,f=RegExp("(^|[\\s,>+~])("+d().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),g="$1"+A+"\\:$2";e--;)b=c[e]=c[e].split("}"),b[b.length-1]=b[b.length-1].replace(f,g),c[e]=b.join("}");return c.join("{")}function n(a){for(var b=a.length;b--;)a[b].removeNode()}function o(a){function b(){clearTimeout(g._removeSheetTimer),d&&d.removeNode(!0),d=null}var d,e,g=f(a),h=a.namespaces,i=a.parentWindow;return!B||a.printShived?a:("undefined"==typeof h[A]&&h.add(A),i.attachEvent("onbeforeprint",function(){b();for(var f,g,h,i=a.styleSheets,j=[],l=i.length,n=Array(l);l--;)n[l]=i[l];for(;h=n.pop();)if(!h.disabled&&z.test(h.media)){try{f=h.imports,g=f.length}catch(o){g=0}for(l=0;g>l;l++)n.push(f[l]);try{j.push(h.cssText)}catch(o){}}j=m(j.reverse().join("")),e=k(a),d=c(a,j)}),i.attachEvent("onafterprint",function(){n(e),clearTimeout(g._removeSheetTimer),g._removeSheetTimer=setTimeout(b,500)}),a.printShived=!0,a)}var p,q,r="3.7.3",s=a.html5||{},t=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,u=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,v="_html5shiv",w=0,x={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",p="hidden"in a,q=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){p=!0,q=!0}}();var y={elements:s.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:r,shivCSS:s.shivCSS!==!1,supportsUnknownElements:q,shivMethods:s.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=y,j(b);var z=/^$|\b(?:all|print)\b/,A="html5shiv",B=!q&&function(){var c=b.documentElement;return!("undefined"==typeof b.namespaces||"undefined"==typeof b.parentWindow||"undefined"==typeof c.applyElement||"undefined"==typeof c.removeNode||"undefined"==typeof a.attachEvent)}();y.type+=" print",y.shivPrint=o,o(b),"object"==typeof module&&module.exports&&(module.exports=y)}("undefined"!=typeof window?window:this,document);
+		</script>
+		
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" href="http://fablabut/wp-content/themes/zerif-lite/css/ie.css" type="text/css">
+		<![endif]-->
+		
+		<title>ЦМИТ ФабЛаб ТюмГУ</title>
+		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
+		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />
+		<link rel='https://api.w.org/' href='http://fablabut/?rest_route=/' />
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fablabut/xmlrpc.php?rsd" />
+		<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fablabut/wp-includes/wlwmanifest.xml" /> 
+		<meta name="generator" content="WordPress 4.5.3" />
+		
+		<style type="text/css">
 			/* ====== COMMON STYLES ====== */
-            body {
-                background: #010c4b url('./blueprint.jpg') fixed;
-                margin: 0px;
+			html {
+				overflow-y: scroll;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+			}
+			body {
+				background: #2F4E81 url('./blueprint.png') center top fixed;
+				margin: 0px;
 				font-family: Geneva, Arial, Helvetica, sans-serif;
-            }
+				font-weight: normal;
+				overflow-x: hidden;
+			}
+			a img {
+				border: 0;
+			}
 			h1, h2, h3, h4, h5, h6 {
 				margin: 0px;
 			}
@@ -46,73 +56,94 @@
 				clear: both;
 			}
 			.maxwidth {
-				width: 900px;
+				width: 901px;
 				margin: 0px auto;
+				transition: width 0.2s ease 0s;
 			}
 			.textarea-wrapper {
 				border: 1px solid #000;
 				padding: 5px;
 				background: #FFF;
 			}
+			/* ====== FIXES ====== */
+			@-webkit-viewport {
+				width: device-width;
+			}
+			@-moz-viewport {
+				width: device-width;
+			}
+			@-ms-viewport {
+				width: device-width;
+			}
+			@-o-viewport {
+				width: device-width;
+			}
+			@viewport {
+				width: device-width;
+			}
 			/* ====== HEADER ====== */
 			#header {
 				position: absolute;
 				width: 100%;
+				top: 0px;
 			}
-            .header-menu-wrapper {
-                background: #00789D;
-                height: 50px;
-                position: absolute;
-                top: 47%;
-                left: 0px;
-                width: 100%;
-				margin-top: -25px;
-            }
+			.header-menu-wrapper {
+				position: absolute;
+				top: 148px;
+				left: 0px;
+				width: 100%;
+				transition: top 0.3s ease 0s;
+			}
 			.header-menu {
-				height: 50px;
-				border-width: 0px 1px;
-				margin: auto;
+				height: 53px;
+				margin: 0px auto;
 			}
 			.header-menu a {
+				border-top: 3px solid #FFF;
+				border-bottom: 3px solid #FFF;
 				color: #FFF;
-				padding: 5px 15px;
-				line-height: 40px;
+				height: 47px;
+				line-height: 47px;
 				cursor: pointer;
-				font-size: 17px;
-				min-width: 68px;
+				font-size: 19px;
+				width: 100px;
 				text-align: center;
 				text-decoration: none;
-				transition: background-color 0.3s ease 0s;
+				transition: border-color 0.3s ease 0s;
 			}
 			.header-menu a:hover {
-				background-color: #00566f;
+				border-color: #00AAFF;
 			}
-			.logo-link {
+			#logo-link {
 				text-decoration: none;
 				display: block;
 				margin: 0px auto;
+				width: 229px;
+				position: relative;
+				top: 69px;
+				vertical-align: top;
+				transition: top 0.3s ease 0s;
 			}
 			#logo {
-				width: 270px;
-				display: block;
-				margin: 0px auto;
-				position: relative;
+				width: 229px;
 			}
 			/* ====== IDEA SECTION ====== */
-            #idea {
-				padding: 340px 0 50px;
+			#idea {
+				padding: 350px 0 50px;
 				text-align: center;
-            }
+			}
 			#idea h1 {
 				margin: 0px auto;
 				color: #FFF;
-				font-size: 32px;
+				font-size: 36px;
+				line-height: 50px;
 			}
 			#idea button {
-				margin-top: 30px;
+				margin-top: 28px;
 				background: transparent;
-				border: 3px solid #0094FF;
-				padding: 10px 15px;
+				border: 3px solid #00AAFF;
+				line-height: 37px;
+				width: 141px;
 				font-weight: bold;
 				font-size: 16px;
 				color: #FFF;
@@ -121,11 +152,11 @@
 				transition: background-color 0.3s ease 0s;
 			}
 			#idea button:hover {
-				background-color: #055196;
+				background-color: #3c5b90;
 			}
 			/* ====== ACTIVITIES SECTION ====== */
 			#activities {
-				background: #e6e6e6;
+				background: #f2f2f2;
 				min-height: 500px;
 				padding: 50px 0px 50px;
 			}
@@ -196,11 +227,29 @@
 				height: 200px;
 				background: #303135;
 			}
-        </style>
-    </head>
+			
+			/* ====== MEDIA QUERIES ====== */
+			@media only all and (max-width: 930px) {
+				.maxwidth {
+					width: 601px;
+				}
+				.header-menu-wrapper {
+					top: 0px;
+				}
+				#logo-link {
+					top: 99px;
+				}
+			}
+			@media only all and (max-width: 630px) {
+				.maxwidth {
+					width: 301px;
+				}
+			}
+		</style>
+	</head>
 	<body>
-        <header id="header">
-            <div class="header-menu-wrapper">
+		<header id="header">
+			<div class="header-menu-wrapper">
 				<nav class="header-menu maxwidth">
 					<a class="header-menu-button floatleft" href="#">Главная</a>
 					<a class="header-menu-button floatleft" href="#">Новости</a>
@@ -211,13 +260,13 @@
 				</nav>
 				<div class="clear"></div>
 			</div>
-			<a class="logo-link" href="#"><img id="logo" src="./logo-white.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
-        </header>
-        <section id="idea">
+			<a id="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
+		</header>
+		<section id="idea">
 			<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
 			<button type="button">Подробнее</button>
-        </section>
-        <section id="activities">
+		</section>
+		<section id="activities">
 			<h3>Деятельность</h3>
 			<div class="activities-wrapper maxwidth">
 				<figure>
@@ -270,13 +319,13 @@
 				</figure>
 				<div class="clear"></div>
 			</div>
-        </section>
-        <section id="news">
+		</section>
+		<section id="news">
 			<h3>Новости</h3>
 			<div class="maxwidth">
 				
 			</div>
-        </section>
+		</section>
 		<section id="feedback">
 			<h3>Напишите нам</h3>
 			<div class="maxwidth">
@@ -291,8 +340,8 @@ TODO:
 					</textarea>
 				</div>
 			</div>
-        </section>
-        <footer id="footer">
-        </footer>
-    </body>
+		</section>
+		<footer id="footer">
+		</footer>
+	</body>
 </html>
