@@ -152,7 +152,7 @@
 			#idea h1 {
 				margin: 0px auto;
 				color: #FFF;
-				font-size: 36px;
+				font-size: 40px;
 				line-height: 50px;
 			}
 			#idea-text {
@@ -192,7 +192,6 @@
 			/* ====== ACTIVITIES SECTION ====== */
 			#activities {
 				background: #f2f2f2;
-				min-height: 500px;
 				padding: 50px 0px 50px;
 			}
 			#activities h3 {
@@ -204,39 +203,81 @@
 			.activities-wrapper {
 				margin-top: 30px;
 			}
-			#activities figure {
+			#activities .activity {
+				width: 250px;
+				padding: 25px;
+				float: left;
+				margin: 0px;
+				text-align: center;
+				color: #454545;
+			}
+			.activity-link {
+				vertical-align: top;
+				text-decoration: none;
+				cursor: pointer;
+				display: block;
+				text-align: center;
+			}
+			.activities-image {
 				position: relative;
 				width: 200px;
-				margin: 12px;
-				float: left;
-				/*background: red;*/
+				margin: 0px auto 20px;
 			}
 			.gear {
 				width: 200px;
 				height: 200px;
 				background: url('./gear.png');
 				position: absolute;
+				transition: transform 0.3s ease 0s;
 			}
-			#activities figure img {
+			#activities .activity img {
 				margin: 44px;
 				width: 112px;
 				height: 112px;
 			}
-			#activities figure h6 {
-				text-align: center;
-				font-size: 20px;
-				margin: 20px 0px 0px;
+			#activities .activity h6 {
+				font-size: 22px;
 				color: #4a4a4a;
+				display: inline;
+				border-bottom: 3px solid #00aaff;
+				padding-bottom: 6px;
+				transition: color 0.3s ease 0s;
+			}
+			#activities .activity-link:hover h6 {
+				color: #00aaff;
+			}
+			#activities .activity-link:hover .gear {
+				-webkit-transform: rotate(15deg);
+				-moz-transform: rotate(15deg);
+				-ms-transform: rotate(15deg);
+				-o-transform: rotate(15deg);
+				transform: rotate(15deg);
+			}
+			#activities p {
+				font-size: 14px;
+				margin-top: 16px;
+			}
+			/* ====== COURSES SECTION ====== */
+			#courses {
+				background: #2f4e81;
+				min-height: 500px;
+				padding: 50px 0px 50px;
+			}
+			#courses h3 {
+				margin: 0px auto;
+				color: #fafafa;
+				font-size: 30px;
+				text-align: center;
 			}
 			/* ====== NEWS SECTION ====== */
 			#news {
-				background: #00789D;
+				background: #f2f2f2;
 				height: 500px;
 				padding: 50px 0px 50px;
 			}
 			#news h3 {
 				margin: 0px auto;
-				color: #FFF;
+				color: #2d2d2d;
 				font-size: 30px;
 				text-align: center;
 			}
@@ -341,55 +382,79 @@
 		<section id="activities">
 			<h3>Деятельность</h3>
 			<div class="activities-wrapper maxwidth">
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
 				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
 				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
 				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
 				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
 				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
-					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
-					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure>
-					<div class="gear"></div>
-					<img src="./square-image.jpg" alt="Работа с детьми">
-					<h6>Работа с детьми</h6>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
 				</figure>
 				<div class="clear"></div>
+			</div>
+		</section>
+		<section id="courses">
+			<h3>Курсы и мастер-классы</h3>
+			<div class="maxwidth">
+				
 			</div>
 		</section>
 		<section id="news">
