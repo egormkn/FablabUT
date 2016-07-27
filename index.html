@@ -131,6 +131,12 @@
 				top: 0px;
 				background: #253e67;
 			}
+			.header-fixed .header-menu-button {
+				border-color: transparent;
+			}
+			.header-fixed .header-menu-button:hover {
+				background: #3c5b90;
+			}
 			.header-fixed #logo-link {
 				width: 48px;
 				top: 2px;
@@ -162,9 +168,10 @@
 				padding: 0px 40px;
 			}
 			#idea-text.idea-text-visible {
-				max-height: 300px;
+				max-height: 1000px;
 				opacity: 1;
-				padding: 50px 40px 30px;
+				padding-top: 50px;
+				padding-bottom: 30px;
 			}
 			#idea button {
 				margin-top: 28px;
@@ -266,6 +273,13 @@
 					background: #253e67;
 					position: fixed;
 				}
+				.header-menu-button {
+					border-color: transparent;
+				}
+				.header-menu-button:hover {
+					background: #3c5b90;
+					border-color: transparent;
+				}
 				#logo-link {
 					display: none;
 				}
@@ -282,6 +296,12 @@
 				}
 				#idea h1 {
 					font-size: 22px;
+					padding-top: 18px;
+					line-height: 30px;
+				}
+				#idea-text {
+					padding-left: 10px;
+					padding-right: 10px;
 				}
 			}
 		</style>
@@ -392,6 +412,7 @@ TODO:
 		<script type="text/javascript">
 		var headerClass = document.getElementById('header').classList;
 		var ideaTextClass = document.getElementById('idea-text').classList;
+		var ideaButton = document.getElementById('idea-button');
 
 		function fixHeader() {
 			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
@@ -405,13 +426,15 @@ TODO:
 		function toggleIdea() {
 			if (ideaTextClass.contains('idea-text-visible')) {
 				ideaTextClass.remove('idea-text-visible');
+				ideaButton.innerHTML = 'Подробнее';
 			} else if (!ideaTextClass.contains('idea-text-visible')) {
 				ideaTextClass.add('idea-text-visible');
+				ideaButton.innerHTML = 'Свернуть';
 			}
 			return false;
 		}
 		
-		document.getElementById('idea-button').onclick = toggleIdea;
+		ideaButton.onclick = toggleIdea;
 		
 		fixHeader();
 		window.onscroll = function() {
