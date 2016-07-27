@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="http://fablabut/xmlrpc.php">
+		<!-- <link rel="pingback" href="http://fablabut/xmlrpc.php"> -->
 		
 		<script type="text/javascript">
 		/**
@@ -19,12 +19,12 @@
 		<![endif]-->
 		
 		<title>ЦМИТ ФабЛаб ТюмГУ</title>
-		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
+		<!-- <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
 		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />
 		<link rel='https://api.w.org/' href='http://fablabut/?rest_route=/' />
 		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fablabut/xmlrpc.php?rsd" />
 		<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fablabut/wp-includes/wlwmanifest.xml" /> 
-		<meta name="generator" content="WordPress 4.5.3" />
+		<meta name="generator" content="WordPress 4.5.3" />-->
 		
 		<style type="text/css">
 			/* ====== COMMON STYLES ====== */
@@ -34,7 +34,7 @@
 				-ms-text-size-adjust: 100%;
 			}
 			body {
-				background: #2F4E81 url('./blueprint.png') center top fixed;
+				background: #2F4E81 url('./blueprint.png') center top fixed repeat;
 				margin: 0px;
 				font-family: Geneva, Arial, Helvetica, sans-serif;
 				font-weight: normal;
@@ -56,7 +56,7 @@
 				clear: both;
 			}
 			.maxwidth {
-				width: 901px;
+				width: 900px;
 				margin: 0px auto;
 				transition: width 0.2s ease 0s;
 			}
@@ -82,23 +82,20 @@
 				width: device-width;
 			}
 			/* ====== HEADER ====== */
-			#header {
+			.header {
 				position: absolute;
 				width: 100%;
-				top: 0px;
-			}
-			.header-menu-wrapper {
-				position: absolute;
 				top: 148px;
 				left: 0px;
-				width: 100%;
-				transition: top 0.3s ease 0s;
+				right: 0px;
+				z-index: 100;
+				transition: background-color 0.3s ease 0s
 			}
 			.header-menu {
 				height: 53px;
 				margin: 0px auto;
 			}
-			.header-menu a {
+			.header-menu-button {
 				border-top: 3px solid #FFF;
 				border-bottom: 3px solid #FFF;
 				color: #FFF;
@@ -111,21 +108,35 @@
 				text-decoration: none;
 				transition: border-color 0.3s ease 0s;
 			}
-			.header-menu a:hover {
+			.header-menu-button:hover {
 				border-color: #00AAFF;
 			}
 			#logo-link {
 				text-decoration: none;
 				display: block;
 				margin: 0px auto;
+				left: 0px; right: 0px;
 				width: 229px;
-				position: relative;
-				top: 69px;
-				vertical-align: top;
-				transition: top 0.3s ease 0s;
+				position: absolute;
+				top: -79px;
+				transition: top 0.3s ease 0s, width 0.3s ease 0s;
 			}
 			#logo {
 				width: 229px;
+				vertical-align: top;
+				transition: width 0.3s ease 0s;
+			}
+			.header-fixed {
+				position: fixed;
+				top: 0px;
+				background: #253e67;
+			}
+			.header-fixed #logo-link {
+				width: 48px;
+				top: 2px;
+			}
+			.header-fixed #logo {
+				width: 48px;
 			}
 			/* ====== IDEA SECTION ====== */
 			#idea {
@@ -137,6 +148,23 @@
 				color: #FFF;
 				font-size: 36px;
 				line-height: 50px;
+			}
+			#idea-text {
+				opacity: 0;
+				max-height: 0;
+				overflow: hidden;
+				-moz-transition: opacity .3s, max-height .3s, padding .3s;
+				-ms-transition: opacity .3s, max-height .3s, padding .3s;
+				transition: opacity .3s, max-height .3s, padding .3s;
+				font-size: 18px;
+				color: #FFF;
+				line-height: 20px;
+				padding: 0px 40px;
+			}
+			#idea-text.idea-text-visible {
+				max-height: 300px;
+				opacity: 1;
+				padding: 50px 40px 30px;
 			}
 			#idea button {
 				margin-top: 28px;
@@ -231,43 +259,58 @@
 			/* ====== MEDIA QUERIES ====== */
 			@media only all and (max-width: 930px) {
 				.maxwidth {
-					width: 601px;
+					width: 600px;
 				}
-				.header-menu-wrapper {
+				.header {
 					top: 0px;
+					background: #253e67;
+					position: fixed;
 				}
 				#logo-link {
-					top: 99px;
+					display: none;
+				}
+				#idea {
+					background: url('./logo.png') center 69px no-repeat;
 				}
 			}
 			@media only all and (max-width: 630px) {
 				.maxwidth {
-					width: 301px;
+					width: 300px;
+				}
+				#idea {
+					background-position: center 119px;
 				}
 				#idea h1 {
-					font-size: 24px;
+					font-size: 22px;
 				}
 			}
 		</style>
 	</head>
 	<body>
-		<header id="header">
-			<div class="header-menu-wrapper">
-				<nav class="header-menu maxwidth">
-					<a class="header-menu-button floatleft" href="#">Главная</a>
-					<a class="header-menu-button floatleft" href="#">Новости</a>
-					<a class="header-menu-button floatleft" href="#">Проекты</a>
-					<a class="header-menu-button floatright" href="#">Контакты</a>
-					<a class="header-menu-button floatright" href="#">Услуги</a>
-					<a class="header-menu-button floatright" href="#">Статьи</a>
-				</nav>
-				<div class="clear"></div>
-			</div>
-			<a id="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
+		<header id="header" class="header">
+			<nav class="header-menu maxwidth">
+				<a class="header-menu-button floatleft" href="#">Главная</a>
+				<a class="header-menu-button floatleft" href="#">Новости</a>
+				<a class="header-menu-button floatleft" href="#">Проекты</a>
+				<a class="header-menu-button floatright" href="#">Контакты</a>
+				<a class="header-menu-button floatright" href="#">Услуги</a>
+				<a class="header-menu-button floatright" href="#">Статьи</a>
+				<a id="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
+			</nav>
 		</header>
 		<section id="idea">
-			<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
-			<button type="button">Подробнее</button>
+			<div class="maxwidth">
+				<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
+				<div id="idea-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				</div>
+				<button id="idea-button" type="button">Подробнее</button>
+			</div>
 		</section>
 		<section id="activities">
 			<h3>Деятельность</h3>
@@ -346,5 +389,34 @@ TODO:
 		</section>
 		<footer id="footer">
 		</footer>
+		<script type="text/javascript">
+		var headerClass = document.getElementById('header').classList;
+		var ideaTextClass = document.getElementById('idea-text').classList;
+
+		function fixHeader() {
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (headerClass.contains('header-fixed') && scrolled < 148) {
+				headerClass.remove('header-fixed');
+			} else if (!headerClass.contains('header-fixed') && scrolled >= 148) {
+				headerClass.add('header-fixed');
+			}
+		}
+		
+		function toggleIdea() {
+			if (ideaTextClass.contains('idea-text-visible')) {
+				ideaTextClass.remove('idea-text-visible');
+			} else if (!ideaTextClass.contains('idea-text-visible')) {
+				ideaTextClass.add('idea-text-visible');
+			}
+			return false;
+		}
+		
+		document.getElementById('idea-button').onclick = toggleIdea;
+		
+		fixHeader();
+		window.onscroll = function() {
+			fixHeader();
+		};
+		</script>
 	</body>
 </html>
