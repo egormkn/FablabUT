@@ -40,6 +40,15 @@
 				font-weight: normal;
 				overflow-x: hidden;
 			}
+			form {
+				border: 0px;
+				margin: 0px;
+				padding: 0px;
+			}
+			textarea, input {
+				font-family: Geneva, Arial, Helvetica, sans-serif;
+				font-weight: normal;
+			}
 			a img {
 				border: 0;
 			}
@@ -60,10 +69,46 @@
 				margin: 0px auto;
 				transition: width 0.2s ease 0s;
 			}
-			.textarea-wrapper {
-				border: 1px solid #000;
-				padding: 5px;
+			.center {
+				text-align: center;
+			}
+			/* ====== PLACEHOLDER ====== */
+			.input-wrapper, .textarea-wrapper {
 				background: #FFF;
+				position: relative;
+				border: 2px solid transparent;
+				padding: 5px 10px;
+				transition: border-color 0.3s ease 0s;
+			}
+			.input-placeholder, .textarea-placeholder {
+				position: absolute;
+				top: 5px;
+				left: 10px;
+				right: 10px;
+				bottom: 5px;
+				z-index: 1;
+				font-size: 22px;
+				color: #6e6e6e;
+				transition: color 0.3s ease 0s;
+			}
+			.input-wrapper input, .textarea-wrapper textarea {
+				background: #FFF;
+				position: relative;
+				z-index: 2;
+				margin: 0px;
+				padding: 0px;
+				border: 0px;
+				width: 100%;
+				transition: background-color 0.3s ease 0s;
+			}
+			.input-empty input, .textarea-empty textarea {
+				background: transparent;
+			}
+			.input-focus .input-placeholder, .textarea-focus .textarea-placeholder {
+				color: #CCC;
+			}
+			.input-focus, .textarea-focus {
+				border-color: #00aaff;
 			}
 			/* ====== FIXES ====== */
 			@-webkit-viewport {
@@ -129,13 +174,13 @@
 			.header-fixed {
 				position: fixed;
 				top: 0px;
-				background: #253e67;
+				background: #1189bd;
 			}
 			.header-fixed .header-menu-button {
 				border-color: transparent;
 			}
 			.header-fixed .header-menu-button:hover {
-				background: #3c5b90;
+				background: #0e729c;
 			}
 			.header-fixed #logo-link {
 				width: 48px;
@@ -187,7 +232,7 @@
 				transition: background-color 0.3s ease 0s;
 			}
 			#idea button:hover {
-				background-color: #3c5b90;
+				background-color: #1189bd;
 			}
 			/* ====== ACTIVITIES SECTION ====== */
 			.section-title {
@@ -275,7 +320,6 @@
 			}
 			/* ====== FEEDBACK SECTION ====== */
 			#feedback {
-				height: 500px;
 				padding: 50px 0px 50px;
 			}
 			#feedback h3 {
@@ -283,10 +327,33 @@
 				color: #FFF;
 			}
 			#feedback textarea {
-				width: 100%;
-				border: 0px;
-				padding: 0px;
 				min-height: 180px;
+			}
+			#feedback .input-wrapper {
+				margin-bottom: 22px;
+				width: 415px;
+			}
+			#feedback .input-wrapper input {
+				font-size: 22px;
+			}
+			#feedback .textarea-wrapper textarea, #feedback .textarea-placeholder {
+				font-size: 18px;
+			}
+			#feedback button {
+				margin-top: 28px;
+				background: transparent;
+				border: 3px solid #00AAFF;
+				line-height: 37px;
+				font-weight: bold;
+				padding: 0px 10px;
+				font-size: 16px;
+				color: #FFF;
+				text-transform: uppercase;
+				cursor: pointer;
+				transition: background-color 0.3s ease 0s;
+			}
+			#feedback button:hover {
+				background-color: #1189bd;
 			}
 			/* ====== FOOTER ====== */
 			#footer {
@@ -301,7 +368,7 @@
 				}
 				.header {
 					top: 0px;
-					background: #253e67;
+					background: #1189bd;
 					position: fixed;
 				}
 				.header-menu {
@@ -315,13 +382,17 @@
 					width: 100px;
 				}
 				.header-menu-button:hover {
-					background: #3c5b90;
+					background: #0e729c;
 				}
 				#logo-link {
 					display: none;
 				}
 				#idea {
 					background: url('./logo.png') center 69px no-repeat;
+				}
+				#feedback .input-wrapper {
+					width: auto;
+					float: none;
 				}
 			}
 			@media only all and (max-width: 630px) {
@@ -456,19 +527,18 @@
 		<section id="feedback">
 			<h3 class="section-title">Напишите нам</h3>
 			<div class="maxwidth">
-				<div class=""><input type="text"></div>
-				<div class="textarea-wrapper">
-					<textarea placeholder="Ваше сообщение">
-TODO:
-- Курсы
-- Новости
-- Форма обратной связи
-- Нижняя часть страницы (footer)
-- Поиск багов
-- Рефакторинг?
-- ?????
-					</textarea>
-				</div>
+				<form>
+					<div class="input-wrapper floatleft"><div class="input-placeholder">Имя</div><input type="text"></div>
+					<div class="input-wrapper floatright"><div class="input-placeholder">Email или телефон</div><input type="text"></div>
+					<div class="clear"></div>
+					<div class="textarea-wrapper">
+						<div class="textarea-placeholder">Сообщение</div>
+						<textarea></textarea>
+					</div>
+					<div class="center">
+						<button id="feedback-button" type="button">Отправить сообщение</button>
+					</div>
+				</form>
 			</div>
 		</section>
 		<footer id="footer">
@@ -498,6 +568,65 @@ TODO:
 			}
 			return false;
 		}
+		
+		(function placeholder(){
+			function bindActions(wrapper, tag) {
+				var field = wrapper.getElementsByTagName(tag)[0];
+				if (!wrapper.classList.contains(tag + '-blur')){
+					wrapper.classList.add(tag + '-blur');
+				}
+				if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+					wrapper.classList.add(tag + '-empty');
+				}
+				field.onblur = function() {
+					if (!wrapper.classList.contains(tag + '-blur')){
+						wrapper.classList.add(tag + '-blur');
+					}
+					if (wrapper.classList.contains(tag + '-focus')){
+						wrapper.classList.remove(tag + '-focus');
+					}
+					if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.add(tag + '-empty');
+					}
+					if (field.value != "" && wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.remove(tag + '-empty');
+					}
+				};
+				
+				field.onkeyup = function() {
+					if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.add(tag + '-empty');
+					}
+					if (field.value != "" && wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.remove(tag + '-empty');
+					}
+				};
+
+				field.onfocus = function() {
+					if (wrapper.classList.contains(tag + '-blur')){
+						wrapper.classList.remove(tag + '-blur');
+					}
+					if (!wrapper.classList.contains(tag + '-focus')){
+						wrapper.classList.add(tag + '-focus');
+					}
+					if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.add(tag + '-empty');
+					}
+					if (field.value != "" && wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.remove(tag + '-empty');
+					}
+				};
+			}
+			
+			['input', 'textarea'].forEach(function(tag) {
+				var wrappers = document.getElementsByClassName(tag + '-wrapper');
+				for (var i = 0; i < wrappers.length; i++) {
+					bindActions(wrappers[i], tag);
+				}
+			});
+		})();
+		
+
 		
 		ideaButton.onclick = toggleIdea;
 		
