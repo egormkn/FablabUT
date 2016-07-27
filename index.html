@@ -248,11 +248,12 @@
 			}
 			.activities-wrapper {
 				margin-top: 30px;
+				text-align: center;
 			}
 			#activities .activity {
 				width: 250px;
 				padding: 25px;
-				float: left;
+				display: inline-block;
 				margin: 0px;
 				text-align: center;
 				color: #454545;
@@ -357,7 +358,7 @@
 			}
 			/* ====== FOOTER ====== */
 			#footer {
-				height: 200px;
+				padding-bottom: 5px;
 				background: #303135;
 			}
 			
@@ -412,6 +413,17 @@
 					padding-right: 10px;
 				}
 			}
+			@media only all and (min-width: 1200px) {
+				.maxwidth {
+					width: 1200px;
+				}
+				.header-menu-button {
+					width: 150px;
+				}
+				#feedback .input-wrapper {
+					width: 564px;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -442,8 +454,8 @@
 		</section>
 		<section id="activities">
 			<h3 class="section-title">Деятельность</h3>
-			<div class="activities-wrapper maxwidth">
-				<figure class="activity">
+			<div class="activities-wrapper maxwidth"><!--
+				--><figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="gear"></div>
@@ -453,8 +465,8 @@
 					</a>
 					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure class="activity">
+				</figure><!--
+				--><figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="gear"></div>
@@ -464,8 +476,8 @@
 					</a>
 					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure class="activity">
+				</figure><!--
+				--><figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="gear"></div>
@@ -475,8 +487,8 @@
 					</a>
 					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure class="activity">
+				</figure><!--
+				--><figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="gear"></div>
@@ -486,8 +498,8 @@
 					</a>
 					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure class="activity">
+				</figure><!--
+				--><figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="gear"></div>
@@ -497,8 +509,8 @@
 					</a>
 					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<figure class="activity">
+				</figure><!--
+				--><figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="gear"></div>
@@ -508,8 +520,8 @@
 					</a>
 					<div class="activity-hr"></div>
 					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
-				</figure>
-				<div class="clear"></div>
+				</figure><!--
+				--><div class="clear"></div>
 			</div>
 		</section>
 		<section id="courses">
@@ -542,6 +554,15 @@
 			</div>
 		</section>
 		<footer id="footer">
+			<div class="maxwidth">
+				<script type="text/javascript" src="https://vk.com/js/api/openapi.js?125"></script>
+
+				<!-- VK Widget -->
+				<div id="vk_groups"></div>
+				<script type="text/javascript">
+				VK.Widgets.Group("vk_groups", {redesign: 1, mode: 3, width: "300", height: "400", color1: '303135', color2: 'FFFFFF', color3: 'FFFFFF'}, 65229391);
+				</script>
+			</div>
 		</footer>
 		
 		<script type="text/javascript">
