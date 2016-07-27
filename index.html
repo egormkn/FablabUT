@@ -190,15 +190,16 @@
 				background-color: #3c5b90;
 			}
 			/* ====== ACTIVITIES SECTION ====== */
-			#activities {
-				background: #f2f2f2;
-				padding: 50px 0px 50px;
-			}
-			#activities h3 {
+			.section-title {
 				margin: 0px auto;
-				color: #2d2d2d;
 				font-size: 30px;
 				text-align: center;
+				text-transform: uppercase;
+				color: #2d2d2d;
+			}
+			#activities {
+				background: #f4f4f4 url('./cubes.png') center center repeat;
+				padding: 50px 0px 50px;
 			}
 			.activities-wrapper {
 				margin-top: 30px;
@@ -264,22 +265,13 @@
 				padding: 50px 0px 50px;
 			}
 			#courses h3 {
-				margin: 0px auto;
 				color: #fafafa;
-				font-size: 30px;
-				text-align: center;
 			}
 			/* ====== NEWS SECTION ====== */
 			#news {
-				background: #f2f2f2;
+				background: #f4f4f4 url('./cubes.png') center center repeat;
 				height: 500px;
 				padding: 50px 0px 50px;
-			}
-			#news h3 {
-				margin: 0px auto;
-				color: #2d2d2d;
-				font-size: 30px;
-				text-align: center;
 			}
 			/* ====== FEEDBACK SECTION ====== */
 			#feedback {
@@ -289,8 +281,6 @@
 			#feedback h3 {
 				margin: 0px auto 40px;
 				color: #FFF;
-				font-size: 30px;
-				text-align: center;
 			}
 			#feedback textarea {
 				width: 100%;
@@ -380,7 +370,7 @@
 			</div>
 		</section>
 		<section id="activities">
-			<h3>Деятельность</h3>
+			<h3 class="section-title">Деятельность</h3>
 			<div class="activities-wrapper maxwidth">
 				<figure class="activity">
 					<a class="activity-link" href="#">
@@ -452,34 +442,38 @@
 			</div>
 		</section>
 		<section id="courses">
-			<h3>Курсы и мастер-классы</h3>
+			<h3 class="section-title">Курсы и мастер-классы</h3>
 			<div class="maxwidth">
 				
 			</div>
 		</section>
 		<section id="news">
-			<h3>Новости</h3>
+			<h3 class="section-title">Новости</h3>
 			<div class="maxwidth">
 				
 			</div>
 		</section>
 		<section id="feedback">
-			<h3>Напишите нам</h3>
+			<h3 class="section-title">Напишите нам</h3>
 			<div class="maxwidth">
 				<div class=""><input type="text"></div>
 				<div class="textarea-wrapper">
 					<textarea placeholder="Ваше сообщение">
 TODO:
-- Адаптация под мобильные устройства
-- Секция новостей
+- Курсы
+- Новости
 - Форма обратной связи
 - Нижняя часть страницы (footer)
+- Поиск багов
+- Рефакторинг?
+- ?????
 					</textarea>
 				</div>
 			</div>
 		</section>
 		<footer id="footer">
 		</footer>
+		
 		<script type="text/javascript">
 		var headerClass = document.getElementById('header').classList;
 		var ideaTextClass = document.getElementById('idea-text').classList;
