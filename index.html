@@ -418,7 +418,7 @@
 					background-position: center 119px;
 				}
 				#idea h1 {
-					font-size: 22px;
+					font-size: 20px;
 					padding-top: 18px;
 					line-height: 30px;
 				}
@@ -669,6 +669,9 @@
 		ideaButton.onclick = toggleIdea;
 		
 		function fixHeader() {
+			if (document.documentElement.clientWidth > 630) {
+				return false;
+			}
 			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
 			if (headerClass.contains('header-fixed') && scrolled < 148) {
 				headerClass.remove('header-fixed');
