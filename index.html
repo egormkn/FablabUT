@@ -21,8 +21,18 @@
 		<![endif]-->
 		
 		<title>ЦМИТ ФабЛаб ТюмГУ</title>
+		
 		<link rel="icon" href="./favicon.ico?v=2">
 		<link rel="shortcut icon" href="./favicon.ico?v=2">
+		
+		<!-- Microsoft Modern UI -->
+		<meta name="application-name" content="Фаблаб ТюмГУ">
+		<meta name="msapplication-square70x70logo" content="small.jpg">
+		<meta name="msapplication-square150x150logo" content="medium.jpg">
+		<meta name="msapplication-wide310x150logo" content="wide.jpg">
+		<meta name="msapplication-square310x310logo" content="large.jpg">
+		<meta name="msapplication-TileColor" content="#1189bd">
+		<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=5; cycle=1"/>
 
 		<!-- <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
 		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />
@@ -37,6 +47,8 @@
 				overflow-y: scroll;
 				-webkit-text-size-adjust: 100%;
 				-ms-text-size-adjust: 100%;
+				-moz-text-size-adjust: 100%;
+				text-size-adjust: 100%;
 			}
 			body {
 				background: #2F4E81 url('./blueprint.png') center top fixed repeat;
@@ -73,6 +85,10 @@
 			.maxwidth {
 				width: 900px;
 				margin: 0px auto;
+				-webkit-transition: width 0.2s ease 0s;
+				-moz-transition: width 0.2s ease 0s;
+				-o-transition: width 0.2s ease 0s;
+				-ms-transition: width 0.2s ease 0s;
 				transition: width 0.2s ease 0s;
 			}
 			.center {
@@ -91,6 +107,10 @@
 				text-transform: uppercase;
 				cursor: pointer;
 				display: block;
+				-webkit-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
 				transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
 				text-decoration: none;
 			}
@@ -104,6 +124,10 @@
 				position: relative;
 				border: 2px solid transparent;
 				padding: 5px 10px;
+				-webkit-transition: border-color 0.3s ease 0s;
+				-moz-transition: border-color 0.3s ease 0s;
+				-o-transition: border-color 0.3s ease 0s;
+				-ms-transition: border-color 0.3s ease 0s;
 				transition: border-color 0.3s ease 0s;
 			}
 			.input-placeholder, .textarea-placeholder {
@@ -115,6 +139,10 @@
 				font-size: 22px;
 				line-height: 26px;
 				color: #6e6e6e;
+				-webkit-transition: color 0.3s ease 0s;
+				-moz-transition: color 0.3s ease 0s;
+				-o-transition: color 0.3s ease 0s;
+				-ms-transition: color 0.3s ease 0s;
 				transition: color 0.3s ease 0s;
 			}
 			.input-wrapper input {
@@ -130,6 +158,10 @@
 				padding: 0px;
 				border: 0px;
 				width: 100%;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
 				transition: background-color 0.3s ease 0s;
 			}
 			.input-empty input, .textarea-empty textarea {
@@ -165,6 +197,10 @@
 				left: 0px;
 				right: 0px;
 				z-index: 100;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
 				transition: background-color 0.3s ease 0s
 			}
 			.header-menu {
@@ -182,6 +218,10 @@
 				width: 100px;
 				text-align: center;
 				text-decoration: none;
+				-webkit-transition: border-color 0.3s ease 0s;
+				-moz-transition: border-color 0.3s ease 0s;
+				-o-transition: border-color 0.3s ease 0s;
+				-ms-transition: border-color 0.3s ease 0s;
 				transition: border-color 0.3s ease 0s;
 			}
 			.header-menu-button:hover {
@@ -197,11 +237,19 @@
 				width: 229px;
 				position: absolute;
 				top: -79px;
+				-webkit-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				-moz-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				-o-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				-ms-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
 				transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
 			}
 			.logo-link img {
 				width: 229px;
 				vertical-align: top;
+				-webkit-transition: width 0.3s ease 0s;
+				-moz-transition: width 0.3s ease 0s;
+				-o-transition: width 0.3s ease 0s;
+				-ms-transition: width 0.3s ease 0s;
 				transition: width 0.3s ease 0s;
 			}
 			.header-fixed {
@@ -238,7 +286,9 @@
 				opacity: 0;
 				max-height: 0;
 				overflow: hidden;
+				-webkit-transition: opacity .3s, max-height .3s, padding .3s;
 				-moz-transition: opacity .3s, max-height .3s, padding .3s;
+				-o-transition: opacity .3s, max-height .3s, padding .3s;
 				-ms-transition: opacity .3s, max-height .3s, padding .3s;
 				transition: opacity .3s, max-height .3s, padding .3s;
 				font-size: 18px;
@@ -263,6 +313,10 @@
 				color: #FFF;
 				text-transform: uppercase;
 				cursor: pointer;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
 				transition: background-color 0.3s ease 0s;
 			}
 			#idea button:hover {
@@ -305,6 +359,10 @@
 				height: 200px;
 				background: url('./gear.png');
 				position: absolute;
+				-webkit-transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+				-moz-transition: transform 0.3s ease 0s, -moz-transform 0.3s ease 0s;
+				-o-transition: transform 0.3s ease 0s, -o-transform 0.3s ease 0s;
+				-ms-transition: transform 0.3s ease 0s, -ms-transform 0.3s ease 0s;
 				transition: transform 0.3s ease 0s;
 			}
 			#activities .activity img {
@@ -318,6 +376,10 @@
 				display: inline;
 				border-bottom: 3px solid #00aaff;
 				padding-bottom: 6px;
+				-webkit-transition: color 0.3s ease 0s;
+				-moz-transition: color 0.3s ease 0s;
+				-o-transition: color 0.3s ease 0s;
+				-ms-transition: color 0.3s ease 0s;
 				transition: color 0.3s ease 0s;
 			}
 			#activities .activity-link:hover h6 {
@@ -393,6 +455,10 @@
 				color: #FFF;
 				text-transform: uppercase;
 				cursor: pointer;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
 				transition: background-color 0.3s ease 0s;
 			}
 			#feedback button:hover {
