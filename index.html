@@ -78,6 +78,26 @@
 			.center {
 				text-align: center;
 			}
+			button, .button {
+				padding: 0px;
+				background: transparent;
+				border: 3px solid #00AAFF;
+				margin: 0px auto;
+				line-height: 37px;
+				font-weight: bold;
+				font-size: 16px;
+				color: #FFF;
+				text-align: center;
+				text-transform: uppercase;
+				cursor: pointer;
+				display: block;
+				transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				text-decoration: none;
+			}
+			button:hover, .button:hover {
+				background-color: #1189bd;
+				color: #FFF;
+			}
 			/* ====== PLACEHOLDER ====== */
 			.input-wrapper, .textarea-wrapper {
 				background: #FFF;
@@ -167,7 +187,7 @@
 			.header-menu-button:hover {
 				border-color: #00AAFF;
 			}
-			#logo-link {
+			.logo-link {
 				text-decoration: none;
 				display: block;
 				margin: 0px auto;
@@ -177,7 +197,7 @@
 				top: -79px;
 				transition: top 0.3s ease 0s, width 0.3s ease 0s;
 			}
-			#logo {
+			.logo-link img {
 				width: 229px;
 				vertical-align: top;
 				transition: width 0.3s ease 0s;
@@ -193,11 +213,11 @@
 			.header-fixed .header-menu-button:hover {
 				background: #0e729c;
 			}
-			.header-fixed #logo-link {
+			.header-fixed .logo-link {
 				width: 46px;
 				top: 3px;
 			}
-			.header-fixed #logo {
+			.header-fixed .logo-link img {
 				width: 46px;
 			}
 			/* ====== IDEA SECTION ====== */
@@ -277,7 +297,7 @@
 				width: 200px;
 				margin: 0px auto 20px;
 			}
-			.gear {
+			.activities-gear {
 				width: 200px;
 				height: 200px;
 				background: url('./gear.png');
@@ -300,7 +320,7 @@
 			#activities .activity-link:hover h6 {
 				color: #00aaff;
 			}
-			#activities .activity-link:hover .gear {
+			#activities .activity-link:hover .activities-gear {
 				-webkit-transform: rotate(15deg);
 				-moz-transform: rotate(15deg);
 				-ms-transform: rotate(15deg);
@@ -332,7 +352,12 @@
 				color: #454545;
 				height: 300px;
 				border: 3px solid #aaa8a8;
-				background: #FFF;
+				background: #fafafa;
+			}
+			.news-button {
+				width: 280px;
+				margin-top: 10px;
+				color: #454545;
 			}
 			/* ====== FEEDBACK SECTION ====== */
 			#feedback {
@@ -399,7 +424,7 @@
 				.header-menu-button:hover {
 					background: #0e729c;
 				}
-				#logo-link {
+				.logo-link {
 					display: none;
 				}
 				#idea {
@@ -408,6 +433,9 @@
 				#feedback .input-wrapper {
 					width: auto;
 					float: none;
+				}
+				.news-article-last {
+					display: none;
 				}
 			}
 			@media only all and (max-width: 630px) {
@@ -447,6 +475,9 @@
 					width: 360px;
 					margin: 17px;
 				}
+				.news-button {
+					width: 360px;
+				}
 			}
 		</style>
 	</head>
@@ -459,7 +490,7 @@
 				<a class="header-menu-button floatright" href="#">Контакты</a>
 				<a class="header-menu-button floatright" href="#">Услуги</a>
 				<a class="header-menu-button floatright" href="#">Статьи</a>
-				<a id="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
+				<a class="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
 			</nav>
 		</header>
 		<section id="idea">
@@ -482,7 +513,7 @@
 				<figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
-							<div class="gear"></div>
+							<div class="activities-gear"></div>
 							<img src="./square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
@@ -493,7 +524,7 @@
 				<figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
-							<div class="gear"></div>
+							<div class="activities-gear"></div>
 							<img src="./square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
@@ -504,7 +535,7 @@
 				<figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
-							<div class="gear"></div>
+							<div class="activities-gear"></div>
 							<img src="./square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
@@ -515,7 +546,7 @@
 				<figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
-							<div class="gear"></div>
+							<div class="activities-gear"></div>
 							<img src="./square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
@@ -526,7 +557,7 @@
 				<figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
-							<div class="gear"></div>
+							<div class="activities-gear"></div>
 							<img src="./square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
@@ -537,7 +568,7 @@
 				<figure class="activity">
 					<a class="activity-link" href="#">
 						<div class="activities-image">
-							<div class="gear"></div>
+							<div class="activities-gear"></div>
 							<img src="./square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
@@ -559,11 +590,9 @@
 			<div class="maxwidth">
 				<figure class="news-article"></figure>
 				<figure class="news-article"></figure>
-				<figure class="news-article"></figure>
-				<figure class="news-article"></figure>
-				<figure class="news-article"></figure>
-				<figure class="news-article"></figure>
+				<figure class="news-article news-article-last"></figure>
 				<div class="clear"></div>
+				<a id="news-button" class="button news-button" href="#">Все новости</a>
 			</div>
 		</section>
 		<section id="feedback">
@@ -593,7 +622,6 @@
 		<script type="text/javascript">
 		VK.Widgets.Group("vk_groups", {redesign: 1, mode: 3, width: "300", height: "400", color1: '303135', color2: 'FFFFFF', color3: 'FFFFFF'}, 65229391);
 				
-		var headerClass = document.getElementById('header').classList;
 		var ideaTextClass = document.getElementById('idea-text').classList;
 		var ideaButton = document.getElementById('idea-button');
 		
@@ -607,6 +635,8 @@
 			}
 			return false;
 		}
+		
+		ideaButton.onclick = toggleIdea;
 		
 		(function placeholder(){
 			function bindActions(wrapper, tag) {
@@ -666,10 +696,10 @@
 			});
 		})();
 		
-		ideaButton.onclick = toggleIdea;
+		var headerClass = document.getElementById('header').classList;
 		
 		function fixHeader() {
-			if (document.documentElement.clientWidth > 630) {
+			if (document.documentElement.clientWidth < 630) {
 				return false;
 			}
 			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
