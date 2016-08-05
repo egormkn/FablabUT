@@ -1,15 +1,15 @@
-name: FablabUT Theme
-version: 1.0.0
-description: "Grav theme created for **FablabUT**"
-icon: empire
+name: Fabric
+version: 0.0.1
+description: "Fabric is a clean and modern theme for tecnological websites"
+icon: lightbulb-o
 author:
   name: Egor Makarenko
   email: egormkn@yandex.ru
-  url: http://gear.su
-homepage: https://github.com/getgrav/grav-theme-antimatter
-demo: http://demo.getgrav.org/blog-skeleton
-keywords: fablab, theme, core, modern, fast, responsive, html5, css3
-bugs: https://github.com/getgrav/grav-theme-antimatter/issues
+  url: http://egormkn.github.io
+homepage: https://github.com/egormkn/grav-theme-fabric
+demo: http://egormkn.github.io/grav-theme-fabric
+keywords: fabric, gear, blue, theme, core, modern, fast, responsive, html5, css3, frameworkless
+bugs: https://github.com/egormkn/grav-theme-fabric/issues
 license: MIT
 
 form:
@@ -25,3 +25,10 @@ form:
           0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+    color:
+        type: text
+        size: medium
+        label: Color
+        default: 'blue'
+        validate:
+          type: text
