@@ -1,0 +1,794 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: grav.language.getDefault }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+		{% include 'partials/metadata.html.twig' %}
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		
+		<link rel="icon" type="image/png" href="{{ url('theme://favicon.ico') }}" />
+		<link rel="canonical" href="{{ page.url(true, true) }}" />
+
+		
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<!-- <link rel="pingback" href="http://fablabut/xmlrpc.php"> -->
+		
+		<script type="text/javascript">
+		/**
+		* @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+		*/
+		!function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=y.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=y.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),y.elements=c+" "+a,j(b)}function f(a){var b=x[a[v]];return b||(b={},w++,a[v]=w,x[w]=b),b}function g(a,c,d){if(c||(c=b),q)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():u.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||t.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),q)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return y.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(y,b.frag)}function j(a){a||(a=b);var d=f(a);return!y.shivCSS||p||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),q||i(a,d),a}function k(a){for(var b,c=a.getElementsByTagName("*"),e=c.length,f=RegExp("^(?:"+d().join("|")+")$","i"),g=[];e--;)b=c[e],f.test(b.nodeName)&&g.push(b.applyElement(l(b)));return g}function l(a){for(var b,c=a.attributes,d=c.length,e=a.ownerDocument.createElement(A+":"+a.nodeName);d--;)b=c[d],b.specified&&e.setAttribute(b.nodeName,b.nodeValue);return e.style.cssText=a.style.cssText,e}function m(a){for(var b,c=a.split("{"),e=c.length,f=RegExp("(^|[\\s,>+~])("+d().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),g="$1"+A+"\\:$2";e--;)b=c[e]=c[e].split("}"),b[b.length-1]=b[b.length-1].replace(f,g),c[e]=b.join("}");return c.join("{")}function n(a){for(var b=a.length;b--;)a[b].removeNode()}function o(a){function b(){clearTimeout(g._removeSheetTimer),d&&d.removeNode(!0),d=null}var d,e,g=f(a),h=a.namespaces,i=a.parentWindow;return!B||a.printShived?a:("undefined"==typeof h[A]&&h.add(A),i.attachEvent("onbeforeprint",function(){b();for(var f,g,h,i=a.styleSheets,j=[],l=i.length,n=Array(l);l--;)n[l]=i[l];for(;h=n.pop();)if(!h.disabled&&z.test(h.media)){try{f=h.imports,g=f.length}catch(o){g=0}for(l=0;g>l;l++)n.push(f[l]);try{j.push(h.cssText)}catch(o){}}j=m(j.reverse().join("")),e=k(a),d=c(a,j)}),i.attachEvent("onafterprint",function(){n(e),clearTimeout(g._removeSheetTimer),g._removeSheetTimer=setTimeout(b,500)}),a.printShived=!0,a)}var p,q,r="3.7.3",s=a.html5||{},t=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,u=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,v="_html5shiv",w=0,x={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",p="hidden"in a,q=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){p=!0,q=!0}}();var y={elements:s.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:r,shivCSS:s.shivCSS!==!1,supportsUnknownElements:q,shivMethods:s.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=y,j(b);var z=/^$|\b(?:all|print)\b/,A="html5shiv",B=!q&&function(){var c=b.documentElement;return!("undefined"==typeof b.namespaces||"undefined"==typeof b.parentWindow||"undefined"==typeof c.applyElement||"undefined"==typeof c.removeNode||"undefined"==typeof a.attachEvent)}();y.type+=" print",y.shivPrint=o,o(b),"object"==typeof module&&module.exports&&(module.exports=y)}("undefined"!=typeof window?window:this,document);
+		</script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic" rel="stylesheet"> 
+		
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" href="http://fablabut/wp-content/themes/zerif-lite/css/ie.css" type="text/css">
+		<![endif]-->
+		
+		
+		<link rel="icon" href="./favicon.ico?v=2">
+		<link rel="shortcut icon" href="./favicon.ico?v=2">
+		
+		<!-- Microsoft Modern UI -->
+		<meta name="application-name" content="Фаблаб ТюмГУ">
+		<meta name="msapplication-square70x70logo" content="small.jpg">
+		<meta name="msapplication-square150x150logo" content="medium.jpg">
+		<meta name="msapplication-wide310x150logo" content="wide.jpg">
+		<meta name="msapplication-square310x310logo" content="large.jpg">
+		<meta name="msapplication-TileColor" content="#1189bd">
+		<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=5; cycle=1"/>
+
+		<!-- <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
+		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />
+		<link rel='https://api.w.org/' href='http://fablabut/?rest_route=/' />
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fablabut/xmlrpc.php?rsd" />
+		<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fablabut/wp-includes/wlwmanifest.xml" /> 
+		<meta name="generator" content="WordPress 4.5.3" />-->
+		
+		<style type="text/css">
+			/* ====== COMMON STYLES ====== */
+			html {
+				overflow-y: scroll;
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+				-moz-text-size-adjust: 100%;
+				text-size-adjust: 100%;
+			}
+			body {
+				background: #2F4E81 url('./blueprint.png') center top fixed repeat;
+				margin: 0px;
+				font-family: 'Open Sans', Geneva, Arial, Helvetica, sans-serif;
+				font-weight: normal;
+				overflow-x: hidden;
+			}
+			form {
+				border: 0px;
+				margin: 0px;
+				padding: 0px;
+			}
+			textarea, input {
+				font-family: Geneva, Arial, Helvetica, sans-serif;
+				font-weight: normal;
+				outline: none;
+			}
+			a img {
+				border: 0;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0px;
+			}
+			.floatleft {
+				float: left;
+			}
+			.floatright {
+				float: right;
+			}
+			.clear {
+				clear: both;
+			}
+			.maxwidth {
+				width: 900px;
+				margin: 0px auto;
+				-webkit-transition: width 0.2s ease 0s;
+				-moz-transition: width 0.2s ease 0s;
+				-o-transition: width 0.2s ease 0s;
+				-ms-transition: width 0.2s ease 0s;
+				transition: width 0.2s ease 0s;
+			}
+			.center {
+				text-align: center;
+			}
+			button, .button {
+				padding: 0px;
+				background: transparent;
+				border: 3px solid #00AAFF;
+				margin: 0px auto;
+				line-height: 37px;
+				font-weight: bold;
+				font-size: 16px;
+				color: #FFF;
+				text-align: center;
+				text-transform: uppercase;
+				cursor: pointer;
+				display: block;
+				-webkit-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+				text-decoration: none;
+			}
+			button:hover, .button:hover {
+				background-color: #1189bd;
+				color: #FFF;
+			}
+			/* ====== PLACEHOLDER ====== */
+			.input-wrapper, .textarea-wrapper {
+				background: #FFF;
+				position: relative;
+				border: 2px solid transparent;
+				padding: 5px 10px;
+				-webkit-transition: border-color 0.3s ease 0s;
+				-moz-transition: border-color 0.3s ease 0s;
+				-o-transition: border-color 0.3s ease 0s;
+				-ms-transition: border-color 0.3s ease 0s;
+				transition: border-color 0.3s ease 0s;
+			}
+			.input-placeholder, .textarea-placeholder {
+				top: 5px;
+				left: 10px;
+				right: 10px;
+				bottom: 5px;
+				z-index: 1;
+				font-size: 22px;
+				line-height: 26px;
+				color: #6e6e6e;
+				-webkit-transition: color 0.3s ease 0s;
+				-moz-transition: color 0.3s ease 0s;
+				-o-transition: color 0.3s ease 0s;
+				-ms-transition: color 0.3s ease 0s;
+				transition: color 0.3s ease 0s;
+			}
+			.input-wrapper input {
+				font-size: 22px;
+				height: 26px;
+				line-height: 26px;
+			}
+			.input-wrapper input, .textarea-wrapper textarea {
+				background: #FFF;
+				position: relative;
+				z-index: 2;
+				margin: 0px;
+				padding: 0px;
+				border: 0px;
+				width: 100%;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
+				transition: background-color 0.3s ease 0s;
+			}
+			.input-empty input, .textarea-empty textarea {
+				background: transparent;
+			}
+			.input-focus .input-placeholder, .textarea-focus .textarea-placeholder {
+				color: #CCC;
+			}
+			.input-focus, .textarea-focus {
+				border-color: #00aaff;
+			}
+			/* ====== FIXES ====== */
+			@-webkit-viewport {
+				width: device-width;
+			}
+			@-moz-viewport {
+				width: device-width;
+			}
+			@-ms-viewport {
+				width: device-width;
+			}
+			@-o-viewport {
+				width: device-width;
+			}
+			@viewport {
+				width: device-width;
+			}
+			/* ====== HEADER ====== */
+			.header {
+				position: absolute;
+				width: 100%;
+				top: 148px;
+				left: 0px;
+				right: 0px;
+				z-index: 100;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
+				transition: background-color 0.3s ease 0s
+			}
+			.header-menu {
+				height: 53px;
+				margin: 0px auto;
+			}
+			.header-menu-button {
+				border-top: 3px solid #FFF;
+				border-bottom: 3px solid #FFF;
+				color: #FFF;
+				height: 47px;
+				line-height: 47px;
+				cursor: pointer;
+				font-size: 19px;
+				width: 100px;
+				text-align: center;
+				text-decoration: none;
+				-webkit-transition: border-color 0.3s ease 0s;
+				-moz-transition: border-color 0.3s ease 0s;
+				-o-transition: border-color 0.3s ease 0s;
+				-ms-transition: border-color 0.3s ease 0s;
+				transition: border-color 0.3s ease 0s;
+			}
+			.header-menu-button:hover {
+				border-color: #00AAFF;
+			}
+			.logo-link {
+				text-decoration: none;
+				display: block;
+				margin-left: -115px;
+				left: 50%;
+				width: 229px;
+				position: absolute;
+				top: -82px;
+				-webkit-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				-moz-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				-o-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				-ms-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+				transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
+			}
+			.logo-link img {
+				width: 229px;
+				vertical-align: top;
+				-webkit-transition: width 0.3s ease 0s;
+				-moz-transition: width 0.3s ease 0s;
+				-o-transition: width 0.3s ease 0s;
+				-ms-transition: width 0.3s ease 0s;
+				transition: width 0.3s ease 0s;
+			}
+			.header-fixed {
+				position: fixed;
+				top: 0px;
+				background: #1189bd;
+			}
+			.header-fixed .header-menu-button {
+				border-color: transparent;
+			}
+			.header-fixed .header-menu-button:hover {
+				background: #0e729c;
+			}
+			.header-fixed .logo-link {
+				margin-left: -23px;
+				width: 46px;
+				top: 3px;
+			}
+			.header-fixed .logo-link img {
+				width: 46px;
+			}
+			/* ====== IDEA SECTION ====== */
+			#idea {
+				padding: 350px 0 50px;
+				text-align: center;
+			}
+			#idea h1 {
+				margin: 0px auto;
+				color: #FFF;
+				font-size: 40px;
+				line-height: 50px;
+			}
+			#idea-text {
+				opacity: 0;
+				max-height: 0;
+				overflow: hidden;
+				-webkit-transition: opacity .3s, max-height .3s, padding .3s;
+				-moz-transition: opacity .3s, max-height .3s, padding .3s;
+				-o-transition: opacity .3s, max-height .3s, padding .3s;
+				-ms-transition: opacity .3s, max-height .3s, padding .3s;
+				transition: opacity .3s, max-height .3s, padding .3s;
+				font-size: 18px;
+				color: #FFF;
+				line-height: 20px;
+				padding: 0px 40px;
+			}
+			#idea-text.idea-text-visible {
+				max-height: 1000px;
+				opacity: 1;
+				padding-top: 50px;
+				padding-bottom: 30px;
+			}
+			#idea button {
+				margin-top: 28px;
+				background: transparent;
+				border: 3px solid #00AAFF;
+				line-height: 37px;
+				width: 141px;
+				font-weight: bold;
+				font-size: 16px;
+				color: #FFF;
+				text-transform: uppercase;
+				cursor: pointer;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
+				transition: background-color 0.3s ease 0s;
+			}
+			#idea button:hover {
+				background-color: #1189bd;
+			}
+			/* ====== ACTIVITIES SECTION ====== */
+			.section-title {
+				margin: 0px auto 40px;
+				font-size: 30px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #2d2d2d;
+			}
+			#activities {
+				background: #f4f4f4 url('./cubes.png') center center repeat;
+				padding: 50px 0px 50px;
+			}
+			#activities .activity {
+				width: 250px;
+				padding: 0px 25px 25px;
+				float: left;
+				margin: 0px;
+				text-align: center;
+				color: #454545;
+			}
+			.activity-link {
+				vertical-align: top;
+				text-decoration: none;
+				cursor: pointer;
+				display: block;
+				text-align: center;
+			}
+			.activities-image {
+				position: relative;
+				width: 200px;
+				margin: 0px auto 20px;
+			}
+			.activities-gear {
+				width: 200px;
+				height: 200px;
+				background: url('./gear.png');
+				position: absolute;
+				-webkit-transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+				-moz-transition: transform 0.3s ease 0s, -moz-transform 0.3s ease 0s;
+				-o-transition: transform 0.3s ease 0s, -o-transform 0.3s ease 0s;
+				-ms-transition: transform 0.3s ease 0s, -ms-transform 0.3s ease 0s;
+				transition: transform 0.3s ease 0s;
+			}
+			#activities .activity img {
+				margin: 44px;
+				width: 112px;
+				height: 112px;
+			}
+			#activities .activity h6 {
+				font-size: 22px;
+				color: #4a4a4a;
+				display: inline;
+				border-bottom: 3px solid #00aaff;
+				padding-bottom: 6px;
+				-webkit-transition: color 0.3s ease 0s;
+				-moz-transition: color 0.3s ease 0s;
+				-o-transition: color 0.3s ease 0s;
+				-ms-transition: color 0.3s ease 0s;
+				transition: color 0.3s ease 0s;
+			}
+			#activities .activity-link:hover h6 {
+				color: #00aaff;
+			}
+			#activities .activity-link:hover .activities-gear {
+				-webkit-transform: rotate(15deg);
+				-moz-transform: rotate(15deg);
+				-ms-transform: rotate(15deg);
+				-o-transform: rotate(15deg);
+				transform: rotate(15deg);
+			}
+			#activities p {
+				font-size: 14px;
+				margin-top: 16px;
+			}
+			/* ====== COURSES SECTION ====== */
+			#courses {
+				background: #2f4e81;
+				min-height: 500px;
+				padding: 50px 0px 50px;
+			}
+			#courses h3 {
+				color: #fafafa;
+			}
+			/* ====== NEWS SECTION ====== */
+			#news {
+				background: #f4f4f4 url('./cubes.png') center center repeat;
+				padding: 50px 0px 50px;
+			}
+			.news-article {
+				width: 280px;
+				margin: 7px;
+				float: left;
+				color: #454545;
+				height: 300px;
+				border: 3px solid #aaa8a8;
+				background: #fafafa;
+			}
+			.news-button {
+				width: 280px;
+				margin-top: 10px;
+				color: #454545;
+			}
+			/* ====== FEEDBACK SECTION ====== */
+			#feedback {
+				padding: 50px 0px 50px;
+			}
+			#feedback h3 {
+				color: #FFF;
+			}
+			#feedback textarea {
+				min-height: 180px;
+			}
+			#feedback .input-wrapper {
+				margin-bottom: 22px;
+				width: 415px;
+			}
+			#feedback .input-wrapper input {
+				font-size: 22px;
+			}
+			#feedback .textarea-wrapper textarea, #feedback .textarea-placeholder {
+				font-size: 18px;
+			}
+			#feedback button {
+				margin-top: 28px;
+				background: transparent;
+				border: 3px solid #00AAFF;
+				line-height: 37px;
+				font-weight: bold;
+				padding: 0px 10px;
+				font-size: 16px;
+				color: #FFF;
+				text-transform: uppercase;
+				cursor: pointer;
+				-webkit-transition: background-color 0.3s ease 0s;
+				-moz-transition: background-color 0.3s ease 0s;
+				-o-transition: background-color 0.3s ease 0s;
+				-ms-transition: background-color 0.3s ease 0s;
+				transition: background-color 0.3s ease 0s;
+			}
+			#feedback button:hover {
+				background-color: #1189bd;
+			}
+			/* ====== FOOTER ====== */
+			#footer {
+				padding-bottom: 5px;
+				background: #303135;
+			}
+			
+			/* ====== MEDIA QUERIES ====== */
+			@media only all and (max-width: 930px) {
+				.maxwidth {
+					width: 600px;
+				}
+				.header {
+					top: 0px;
+					background: #1189bd;
+					position: fixed;
+				}
+				.header-menu {
+					height: 42px;
+				}
+				.header-menu-button {
+					border: 0px;
+					height: 42px;
+					line-height: 42px;
+					font-size: 17px;
+					width: 100px;
+				}
+				.header-menu-button:hover {
+					background: #0e729c;
+				}
+				.logo-link {
+					display: none;
+				}
+				#idea {
+					background: url('./logo.png') center 69px no-repeat;
+				}
+				#feedback .input-wrapper {
+					width: auto;
+					float: none;
+				}
+				.news-article-last {
+					display: none;
+				}
+			}
+			@media only all and (max-width: 630px) {
+				.maxwidth {
+					width: 300px;
+				}
+				#idea {
+					background-position: center 119px;
+				}
+				#idea h1 {
+					font-size: 20px;
+					padding-top: 18px;
+					line-height: 30px;
+				}
+				#idea-text {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+			@media only all and (min-width: 1200px) {
+				.maxwidth {
+					width: 1200px;
+				}
+				.header-menu-button {
+					width: 150px;
+				}
+				#activities .activity {
+					padding: 0px 75px 70px;
+				}
+				#feedback textarea {
+					min-height: 210px;
+				}
+				#feedback .input-wrapper {
+					width: 564px;
+				}
+				.news-article {
+					width: 360px;
+					margin: 17px;
+				}
+				.news-button {
+					width: 360px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header" class="header">
+			<nav class="header-menu maxwidth">
+				<a class="header-menu-button floatleft" href="#">Главная</a>
+				<a class="header-menu-button floatleft" href="#">Новости</a>
+				<a class="header-menu-button floatleft" href="#">Проекты</a>
+				<a class="header-menu-button floatright" href="#">Контакты</a>
+				<a class="header-menu-button floatright" href="#">Услуги</a>
+				<a class="header-menu-button floatright" href="#">Статьи</a>
+				<a class="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
+			</nav>
+		</header>
+		<section id="idea">
+			<div class="maxwidth">
+				<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
+				<div id="idea-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				</div>
+				<button id="idea-button" type="button">Подробнее</button>
+			</div>
+		</section>
+		<section id="activities">
+			<h3 class="section-title">Деятельность</h3>
+			<div class="activities-wrapper maxwidth">
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="activities-gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="activities-gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="activities-gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="activities-gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="activities-gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<figure class="activity">
+					<a class="activity-link" href="#">
+						<div class="activities-image">
+							<div class="activities-gear"></div>
+							<img src="./square-image.jpg" alt="Работа с детьми">
+						</div>
+						<h6>Работа с детьми</h6>
+					</a>
+					<div class="activity-hr"></div>
+					<p>Проектная работа — специальный вид курсов, где на протяжении одного проекта дети используют свои знания и умения самых разных областей, приумножая их.</p>
+				</figure>
+				<div class="clear"></div>
+			</div>
+		</section>
+		<section id="courses">
+			<h3 class="section-title">Курсы и мастер-классы</h3>
+			<div class="maxwidth">
+				
+			</div>
+		</section>
+		<section id="news">
+			<h3 class="section-title">Новости</h3>
+			<div class="maxwidth">
+				<figure class="news-article"></figure>
+				<figure class="news-article"></figure>
+				<figure class="news-article news-article-last"></figure>
+				<div class="clear"></div>
+				<a id="news-button" class="button news-button" href="#">Все новости</a>
+			</div>
+		</section>
+		<section id="feedback">
+			<h3 class="section-title">Напишите нам</h3>
+			<div class="maxwidth">
+				<form>
+					<div class="input-wrapper floatleft"><div class="input-placeholder">Имя</div><input type="text" autocorrect="off" autocapitalize="words"></div>
+					<div class="input-wrapper floatright"><div class="input-placeholder">Email или телефон</div><input type="text"></div>
+					<div class="clear"></div>
+					<div class="textarea-wrapper">
+						<div class="textarea-placeholder">Сообщение</div>
+						<textarea></textarea>
+					</div>
+					<div class="center">
+						<button id="feedback-button" type="button">Отправить сообщение</button>
+					</div>
+				</form>
+			</div>
+		</section>
+		<footer id="footer">
+			<div class="maxwidth">
+				<div id="vk_groups"></div>
+			</div>
+		</footer>
+		
+		<script type="text/javascript" src="https://vk.com/js/api/openapi.js?125"></script>
+		<script type="text/javascript">
+		VK.Widgets.Group("vk_groups", {redesign: 1, mode: 3, width: "300", height: "400", color1: '303135', color2: 'FFFFFF', color3: 'FFFFFF'}, 65229391);
+				
+		var ideaTextClass = document.getElementById('idea-text').classList;
+		var ideaButton = document.getElementById('idea-button');
+		
+		function toggleIdea() {
+			if (ideaTextClass.contains('idea-text-visible')) {
+				ideaTextClass.remove('idea-text-visible');
+				ideaButton.innerHTML = 'Подробнее';
+			} else if (!ideaTextClass.contains('idea-text-visible')) {
+				ideaTextClass.add('idea-text-visible');
+				ideaButton.innerHTML = 'Свернуть';
+			}
+			return false;
+		}
+		
+		ideaButton.onclick = toggleIdea;
+		
+		(function placeholder(){
+			function bindActions(wrapper, tag) {
+				wrapper.getElementsByClassName(tag + '-placeholder')[0].style.position = 'absolute';
+				var field = wrapper.getElementsByTagName(tag)[0];
+				if (!wrapper.classList.contains(tag + '-blur')){
+					wrapper.classList.add(tag + '-blur');
+				}
+				if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+					wrapper.classList.add(tag + '-empty');
+				}
+				field.onblur = function() {
+					if (!wrapper.classList.contains(tag + '-blur')){
+						wrapper.classList.add(tag + '-blur');
+					}
+					if (wrapper.classList.contains(tag + '-focus')){
+						wrapper.classList.remove(tag + '-focus');
+					}
+					if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.add(tag + '-empty');
+					}
+					if (field.value != "" && wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.remove(tag + '-empty');
+					}
+				};
+				
+				field.onkeyup = function() {
+					if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.add(tag + '-empty');
+					}
+					if (field.value != "" && wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.remove(tag + '-empty');
+					}
+				};
+
+				field.onfocus = function() {
+					if (wrapper.classList.contains(tag + '-blur')){
+						wrapper.classList.remove(tag + '-blur');
+					}
+					if (!wrapper.classList.contains(tag + '-focus')){
+						wrapper.classList.add(tag + '-focus');
+					}
+					if (field.value == "" && !wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.add(tag + '-empty');
+					}
+					if (field.value != "" && wrapper.classList.contains(tag + '-empty')){
+						wrapper.classList.remove(tag + '-empty');
+					}
+				};
+			}
+			
+			['input', 'textarea'].forEach(function(tag) {
+				var wrappers = document.getElementsByClassName(tag + '-wrapper');
+				for (var i = 0; i < wrappers.length; i++) {
+					bindActions(wrappers[i], tag);
+				}
+			});
+		})();
+		
+		var headerClass = document.getElementById('header').classList;
+		
+		function fixHeader() {
+			if (document.documentElement.clientWidth < 630) {
+				return false;
+			}
+			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+			if (headerClass.contains('header-fixed') && scrolled < 148) {
+				headerClass.remove('header-fixed');
+				document.getElementById('logo').src = './logo.png';
+			} else if (!headerClass.contains('header-fixed') && scrolled >= 148) {
+				headerClass.add('header-fixed');
+				setTimeout(function() {
+					document.getElementById('logo').src = './logo-small.png';
+				}, 100);
+			}
+		}
+		
+		fixHeader();
+		window.onscroll = fixHeader;
+		</script>
+	</body>
+</html>
