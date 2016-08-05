@@ -1,0 +1,27 @@
+name: FablabUT Theme
+version: 1.0.0
+description: "Grav theme created for **FablabUT**"
+icon: empire
+author:
+  name: Egor Makarenko
+  email: egormkn@yandex.ru
+  url: http://gear.su
+homepage: https://github.com/getgrav/grav-theme-antimatter
+demo: http://demo.getgrav.org/blog-skeleton
+keywords: fablab, theme, core, modern, fast, responsive, html5, css3
+bugs: https://github.com/getgrav/grav-theme-antimatter/issues
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
