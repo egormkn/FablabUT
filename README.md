@@ -1,6 +1,6 @@
 # Antimatter
 
-![Antimatter](assets/readme_1.png)
+![Antimatter](assets/readme.png)
 
 Antimatter is the default [Grav](http://getgrav.org) theme. Simple, fast and modern.
 
