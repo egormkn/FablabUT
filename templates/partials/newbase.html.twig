@@ -1,5 +1,6 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
+<!-- {{ grav.language.getDefault }} -->
 <html lang="{{ grav.language.getLanguage ?: grav.language.getDefault }}">
 	<head>
 		<meta charset="UTF-8">
@@ -7,7 +8,8 @@
 		{% include 'partials/metadata.html.twig' %}
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		
-		<link rel="icon" type="image/png" href="{{ url('theme://favicon.ico') }}" />
+		<link rel="icon" href="{{ url('theme://favicon.ico') }}" />
+		<link rel="shortcut icon" href="{{ url('theme://favicon.ico') }}" />
 		<link rel="canonical" href="{{ page.url(true, true) }}" />
 
 		
@@ -27,10 +29,6 @@
 		<link rel="stylesheet" href="http://fablabut/wp-content/themes/zerif-lite/css/ie.css" type="text/css">
 		<![endif]-->
 		
-		
-		<link rel="icon" href="./favicon.ico?v=2">
-		<link rel="shortcut icon" href="./favicon.ico?v=2">
-		
 		<!-- Microsoft Modern UI -->
 		<meta name="application-name" content="Фаблаб ТюмГУ">
 		<meta name="msapplication-square70x70logo" content="small.jpg">
@@ -47,512 +45,7 @@
 		<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fablabut/wp-includes/wlwmanifest.xml" /> 
 		<meta name="generator" content="WordPress 4.5.3" />-->
 		
-		<style type="text/css">
-			/* ====== COMMON STYLES ====== */
-			html {
-				overflow-y: scroll;
-				-webkit-text-size-adjust: 100%;
-				-ms-text-size-adjust: 100%;
-				-moz-text-size-adjust: 100%;
-				text-size-adjust: 100%;
-			}
-			body {
-				background: #2F4E81 url('./blueprint.png') center top fixed repeat;
-				margin: 0px;
-				font-family: 'Open Sans', Geneva, Arial, Helvetica, sans-serif;
-				font-weight: normal;
-				overflow-x: hidden;
-			}
-			form {
-				border: 0px;
-				margin: 0px;
-				padding: 0px;
-			}
-			textarea, input {
-				font-family: Geneva, Arial, Helvetica, sans-serif;
-				font-weight: normal;
-				outline: none;
-			}
-			a img {
-				border: 0;
-			}
-			h1, h2, h3, h4, h5, h6 {
-				margin: 0px;
-			}
-			.floatleft {
-				float: left;
-			}
-			.floatright {
-				float: right;
-			}
-			.clear {
-				clear: both;
-			}
-			.maxwidth {
-				width: 900px;
-				margin: 0px auto;
-				-webkit-transition: width 0.2s ease 0s;
-				-moz-transition: width 0.2s ease 0s;
-				-o-transition: width 0.2s ease 0s;
-				-ms-transition: width 0.2s ease 0s;
-				transition: width 0.2s ease 0s;
-			}
-			.center {
-				text-align: center;
-			}
-			button, .button {
-				padding: 0px;
-				background: transparent;
-				border: 3px solid #00AAFF;
-				margin: 0px auto;
-				line-height: 37px;
-				font-weight: bold;
-				font-size: 16px;
-				color: #FFF;
-				text-align: center;
-				text-transform: uppercase;
-				cursor: pointer;
-				display: block;
-				-webkit-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
-				-moz-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
-				-o-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
-				-ms-transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
-				transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
-				text-decoration: none;
-			}
-			button:hover, .button:hover {
-				background-color: #1189bd;
-				color: #FFF;
-			}
-			/* ====== PLACEHOLDER ====== */
-			.input-wrapper, .textarea-wrapper {
-				background: #FFF;
-				position: relative;
-				border: 2px solid transparent;
-				padding: 5px 10px;
-				-webkit-transition: border-color 0.3s ease 0s;
-				-moz-transition: border-color 0.3s ease 0s;
-				-o-transition: border-color 0.3s ease 0s;
-				-ms-transition: border-color 0.3s ease 0s;
-				transition: border-color 0.3s ease 0s;
-			}
-			.input-placeholder, .textarea-placeholder {
-				top: 5px;
-				left: 10px;
-				right: 10px;
-				bottom: 5px;
-				z-index: 1;
-				font-size: 22px;
-				line-height: 26px;
-				color: #6e6e6e;
-				-webkit-transition: color 0.3s ease 0s;
-				-moz-transition: color 0.3s ease 0s;
-				-o-transition: color 0.3s ease 0s;
-				-ms-transition: color 0.3s ease 0s;
-				transition: color 0.3s ease 0s;
-			}
-			.input-wrapper input {
-				font-size: 22px;
-				height: 26px;
-				line-height: 26px;
-			}
-			.input-wrapper input, .textarea-wrapper textarea {
-				background: #FFF;
-				position: relative;
-				z-index: 2;
-				margin: 0px;
-				padding: 0px;
-				border: 0px;
-				width: 100%;
-				-webkit-transition: background-color 0.3s ease 0s;
-				-moz-transition: background-color 0.3s ease 0s;
-				-o-transition: background-color 0.3s ease 0s;
-				-ms-transition: background-color 0.3s ease 0s;
-				transition: background-color 0.3s ease 0s;
-			}
-			.input-empty input, .textarea-empty textarea {
-				background: transparent;
-			}
-			.input-focus .input-placeholder, .textarea-focus .textarea-placeholder {
-				color: #CCC;
-			}
-			.input-focus, .textarea-focus {
-				border-color: #00aaff;
-			}
-			/* ====== FIXES ====== */
-			@-webkit-viewport {
-				width: device-width;
-			}
-			@-moz-viewport {
-				width: device-width;
-			}
-			@-ms-viewport {
-				width: device-width;
-			}
-			@-o-viewport {
-				width: device-width;
-			}
-			@viewport {
-				width: device-width;
-			}
-			/* ====== HEADER ====== */
-			.header {
-				position: absolute;
-				width: 100%;
-				top: 148px;
-				left: 0px;
-				right: 0px;
-				z-index: 100;
-				-webkit-transition: background-color 0.3s ease 0s;
-				-moz-transition: background-color 0.3s ease 0s;
-				-o-transition: background-color 0.3s ease 0s;
-				-ms-transition: background-color 0.3s ease 0s;
-				transition: background-color 0.3s ease 0s
-			}
-			.header-menu {
-				height: 53px;
-				margin: 0px auto;
-			}
-			.header-menu-button {
-				border-top: 3px solid #FFF;
-				border-bottom: 3px solid #FFF;
-				color: #FFF;
-				height: 47px;
-				line-height: 47px;
-				cursor: pointer;
-				font-size: 19px;
-				width: 100px;
-				text-align: center;
-				text-decoration: none;
-				-webkit-transition: border-color 0.3s ease 0s;
-				-moz-transition: border-color 0.3s ease 0s;
-				-o-transition: border-color 0.3s ease 0s;
-				-ms-transition: border-color 0.3s ease 0s;
-				transition: border-color 0.3s ease 0s;
-			}
-			.header-menu-button:hover {
-				border-color: #00AAFF;
-			}
-			.logo-link {
-				text-decoration: none;
-				display: block;
-				margin-left: -115px;
-				left: 50%;
-				width: 229px;
-				position: absolute;
-				top: -82px;
-				-webkit-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
-				-moz-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
-				-o-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
-				-ms-transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
-				transition: top 0.3s ease 0s, width 0.3s ease 0s, margin-left 0.3s ease 0s;
-			}
-			.logo-link img {
-				width: 229px;
-				vertical-align: top;
-				-webkit-transition: width 0.3s ease 0s;
-				-moz-transition: width 0.3s ease 0s;
-				-o-transition: width 0.3s ease 0s;
-				-ms-transition: width 0.3s ease 0s;
-				transition: width 0.3s ease 0s;
-			}
-			.header-fixed {
-				position: fixed;
-				top: 0px;
-				background: #1189bd;
-			}
-			.header-fixed .header-menu-button {
-				border-color: transparent;
-			}
-			.header-fixed .header-menu-button:hover {
-				background: #0e729c;
-			}
-			.header-fixed .logo-link {
-				margin-left: -23px;
-				width: 46px;
-				top: 3px;
-			}
-			.header-fixed .logo-link img {
-				width: 46px;
-			}
-			/* ====== IDEA SECTION ====== */
-			#idea {
-				padding: 350px 0 50px;
-				text-align: center;
-			}
-			#idea h1 {
-				margin: 0px auto;
-				color: #FFF;
-				font-size: 40px;
-				line-height: 50px;
-			}
-			#idea-text {
-				opacity: 0;
-				max-height: 0;
-				overflow: hidden;
-				-webkit-transition: opacity .3s, max-height .3s, padding .3s;
-				-moz-transition: opacity .3s, max-height .3s, padding .3s;
-				-o-transition: opacity .3s, max-height .3s, padding .3s;
-				-ms-transition: opacity .3s, max-height .3s, padding .3s;
-				transition: opacity .3s, max-height .3s, padding .3s;
-				font-size: 18px;
-				color: #FFF;
-				line-height: 20px;
-				padding: 0px 40px;
-			}
-			#idea-text.idea-text-visible {
-				max-height: 1000px;
-				opacity: 1;
-				padding-top: 50px;
-				padding-bottom: 30px;
-			}
-			#idea button {
-				margin-top: 28px;
-				background: transparent;
-				border: 3px solid #00AAFF;
-				line-height: 37px;
-				width: 141px;
-				font-weight: bold;
-				font-size: 16px;
-				color: #FFF;
-				text-transform: uppercase;
-				cursor: pointer;
-				-webkit-transition: background-color 0.3s ease 0s;
-				-moz-transition: background-color 0.3s ease 0s;
-				-o-transition: background-color 0.3s ease 0s;
-				-ms-transition: background-color 0.3s ease 0s;
-				transition: background-color 0.3s ease 0s;
-			}
-			#idea button:hover {
-				background-color: #1189bd;
-			}
-			/* ====== ACTIVITIES SECTION ====== */
-			.section-title {
-				margin: 0px auto 40px;
-				font-size: 30px;
-				text-align: center;
-				text-transform: uppercase;
-				color: #2d2d2d;
-			}
-			#activities {
-				background: #f4f4f4 url('./cubes.png') center center repeat;
-				padding: 50px 0px 50px;
-			}
-			#activities .activity {
-				width: 250px;
-				padding: 0px 25px 25px;
-				float: left;
-				margin: 0px;
-				text-align: center;
-				color: #454545;
-			}
-			.activity-link {
-				vertical-align: top;
-				text-decoration: none;
-				cursor: pointer;
-				display: block;
-				text-align: center;
-			}
-			.activities-image {
-				position: relative;
-				width: 200px;
-				margin: 0px auto 20px;
-			}
-			.activities-gear {
-				width: 200px;
-				height: 200px;
-				background: url('./gear.png');
-				position: absolute;
-				-webkit-transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-				-moz-transition: transform 0.3s ease 0s, -moz-transform 0.3s ease 0s;
-				-o-transition: transform 0.3s ease 0s, -o-transform 0.3s ease 0s;
-				-ms-transition: transform 0.3s ease 0s, -ms-transform 0.3s ease 0s;
-				transition: transform 0.3s ease 0s;
-			}
-			#activities .activity img {
-				margin: 44px;
-				width: 112px;
-				height: 112px;
-			}
-			#activities .activity h6 {
-				font-size: 22px;
-				color: #4a4a4a;
-				display: inline;
-				border-bottom: 3px solid #00aaff;
-				padding-bottom: 6px;
-				-webkit-transition: color 0.3s ease 0s;
-				-moz-transition: color 0.3s ease 0s;
-				-o-transition: color 0.3s ease 0s;
-				-ms-transition: color 0.3s ease 0s;
-				transition: color 0.3s ease 0s;
-			}
-			#activities .activity-link:hover h6 {
-				color: #00aaff;
-			}
-			#activities .activity-link:hover .activities-gear {
-				-webkit-transform: rotate(15deg);
-				-moz-transform: rotate(15deg);
-				-ms-transform: rotate(15deg);
-				-o-transform: rotate(15deg);
-				transform: rotate(15deg);
-			}
-			#activities p {
-				font-size: 14px;
-				margin-top: 16px;
-			}
-			/* ====== COURSES SECTION ====== */
-			#courses {
-				background: #2f4e81;
-				min-height: 500px;
-				padding: 50px 0px 50px;
-			}
-			#courses h3 {
-				color: #fafafa;
-			}
-			/* ====== NEWS SECTION ====== */
-			#news {
-				background: #f4f4f4 url('./cubes.png') center center repeat;
-				padding: 50px 0px 50px;
-			}
-			.news-article {
-				width: 280px;
-				margin: 7px;
-				float: left;
-				color: #454545;
-				height: 300px;
-				border: 3px solid #aaa8a8;
-				background: #fafafa;
-			}
-			.news-button {
-				width: 280px;
-				margin-top: 10px;
-				color: #454545;
-			}
-			/* ====== FEEDBACK SECTION ====== */
-			#feedback {
-				padding: 50px 0px 50px;
-			}
-			#feedback h3 {
-				color: #FFF;
-			}
-			#feedback textarea {
-				min-height: 180px;
-			}
-			#feedback .input-wrapper {
-				margin-bottom: 22px;
-				width: 415px;
-			}
-			#feedback .input-wrapper input {
-				font-size: 22px;
-			}
-			#feedback .textarea-wrapper textarea, #feedback .textarea-placeholder {
-				font-size: 18px;
-			}
-			#feedback button {
-				margin-top: 28px;
-				background: transparent;
-				border: 3px solid #00AAFF;
-				line-height: 37px;
-				font-weight: bold;
-				padding: 0px 10px;
-				font-size: 16px;
-				color: #FFF;
-				text-transform: uppercase;
-				cursor: pointer;
-				-webkit-transition: background-color 0.3s ease 0s;
-				-moz-transition: background-color 0.3s ease 0s;
-				-o-transition: background-color 0.3s ease 0s;
-				-ms-transition: background-color 0.3s ease 0s;
-				transition: background-color 0.3s ease 0s;
-			}
-			#feedback button:hover {
-				background-color: #1189bd;
-			}
-			/* ====== FOOTER ====== */
-			#footer {
-				padding-bottom: 5px;
-				background: #303135;
-			}
-			
-			/* ====== MEDIA QUERIES ====== */
-			@media only all and (max-width: 930px) {
-				.maxwidth {
-					width: 600px;
-				}
-				.header {
-					top: 0px;
-					background: #1189bd;
-					position: fixed;
-				}
-				.header-menu {
-					height: 42px;
-				}
-				.header-menu-button {
-					border: 0px;
-					height: 42px;
-					line-height: 42px;
-					font-size: 17px;
-					width: 100px;
-				}
-				.header-menu-button:hover {
-					background: #0e729c;
-				}
-				.logo-link {
-					display: none;
-				}
-				#idea {
-					background: url('./logo.png') center 69px no-repeat;
-				}
-				#feedback .input-wrapper {
-					width: auto;
-					float: none;
-				}
-				.news-article-last {
-					display: none;
-				}
-			}
-			@media only all and (max-width: 630px) {
-				.maxwidth {
-					width: 300px;
-				}
-				#idea {
-					background-position: center 119px;
-				}
-				#idea h1 {
-					font-size: 20px;
-					padding-top: 18px;
-					line-height: 30px;
-				}
-				#idea-text {
-					padding-left: 10px;
-					padding-right: 10px;
-				}
-			}
-			@media only all and (min-width: 1200px) {
-				.maxwidth {
-					width: 1200px;
-				}
-				.header-menu-button {
-					width: 150px;
-				}
-				#activities .activity {
-					padding: 0px 75px 70px;
-				}
-				#feedback textarea {
-					min-height: 210px;
-				}
-				#feedback .input-wrapper {
-					width: 564px;
-				}
-				.news-article {
-					width: 360px;
-					margin: 17px;
-				}
-				.news-button {
-					width: 360px;
-				}
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="{{ url('theme://css/style.css') }}">
 	</head>
 	<body>
 		<header id="header" class="header">
@@ -563,7 +56,7 @@
 				<a class="header-menu-button floatright" href="#">Контакты</a>
 				<a class="header-menu-button floatright" href="#">Услуги</a>
 				<a class="header-menu-button floatright" href="#">Статьи</a>
-				<a class="logo-link" href="#"><img id="logo" src="./logo.png" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
+				<a class="logo-link" href="#"><img id="logo" src="{{ url('theme://images/logo.png') }}" alt="ЦМИТ ФабЛаб ТюмГУ"></a>
 			</nav>
 		</header>
 		<section id="idea">
@@ -587,7 +80,7 @@
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="activities-gear"></div>
-							<img src="./square-image.jpg" alt="Работа с детьми">
+							<img src="theme://images/square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
 					</a>
@@ -598,7 +91,7 @@
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="activities-gear"></div>
-							<img src="./square-image.jpg" alt="Работа с детьми">
+							<img src="theme://images/square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
 					</a>
@@ -609,7 +102,7 @@
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="activities-gear"></div>
-							<img src="./square-image.jpg" alt="Работа с детьми">
+							<img src="theme://images/square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
 					</a>
@@ -620,7 +113,7 @@
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="activities-gear"></div>
-							<img src="./square-image.jpg" alt="Работа с детьми">
+							<img src="theme://images/square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
 					</a>
@@ -631,7 +124,7 @@
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="activities-gear"></div>
-							<img src="./square-image.jpg" alt="Работа с детьми">
+							<img src="theme://images/square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
 					</a>
@@ -642,7 +135,7 @@
 					<a class="activity-link" href="#">
 						<div class="activities-image">
 							<div class="activities-gear"></div>
-							<img src="./square-image.jpg" alt="Работа с детьми">
+							<img src="theme://images/square-image.jpg" alt="Работа с детьми">
 						</div>
 						<h6>Работа с детьми</h6>
 					</a>
@@ -778,11 +271,11 @@
 			var scrolled = window.pageYOffset || document.documentElement.scrollTop;
 			if (headerClass.contains('header-fixed') && scrolled < 148) {
 				headerClass.remove('header-fixed');
-				document.getElementById('logo').src = './logo.png';
+				document.getElementById('logo').src = 'theme://images/logo.png';
 			} else if (!headerClass.contains('header-fixed') && scrolled >= 148) {
 				headerClass.add('header-fixed');
 				setTimeout(function() {
-					document.getElementById('logo').src = './logo-small.png';
+					document.getElementById('logo').src = 'theme://images/logo-small.png';
 				}, 100);
 			}
 		}
