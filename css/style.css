@@ -225,9 +225,12 @@ button:hover, .button:hover {
 .header-fixed .logo-link img {
 	width: 46px;
 }
+#top {
+	height: 350px;
+}
 /* ====== IDEA SECTION ====== */
 #idea {
-	padding: 350px 0 50px;
+	padding-bottom: 50px;
 	text-align: center;
 }
 #idea h1 {
