@@ -3,15 +3,18 @@
 			<nav class="header-menu maxwidth">
 				<a class="header-menu-button floatleft" href="#">{{ 'HEADER.MENU.HOME'|t }}</a>
 				<a class="header-menu-button floatleft" href="#">{{ 'HEADER.MENU.NEWS'|t }}</a>
-				<a class="header-menu-button floatleft" href="#">{{ 'HEADER.MENU.PROJECTS'|t }}</a>
+				<a class="header-menu-button floatleft" href="#">{{ 'HEADER.MENU.ARTICLES'|t }}</a>
 				<a class="header-menu-button floatright" href="#">{{ 'HEADER.MENU.CONTACTS'|t }}</a>
 				<a class="header-menu-button floatright" href="#">{{ 'HEADER.MENU.SERVICES'|t }}</a>
-				<a class="header-menu-button floatright" href="#">{{ 'HEADER.MENU.ARTICLES'|t }}</a>
+				<a class="header-menu-button floatright" href="#">{{ 'HEADER.MENU.SHOP'|t }}</a>
 				<a class="logo-link" href="{{ base_url == '' ? '/' : base_url }}"><img id="logo" src="{{ url('theme://images/logo.png') }}" data-src-big="{{ url('theme://images/logo.png') }}" data-src-small="{{ url('theme://images/logo-small.png') }}" alt="{{ config.site.title }}" title="{{ config.site.title }}"></a>
 			</nav>
 		</header>
-		<div id="top">
+		<div id="top" class="maxwidth">
+		
 		{% if config.plugins.langswitcher.enabled %}
 		{% include 'partials/langswitcher.html.twig' %}
 		{% endif %}
+		
+		
 		</div>

@@ -228,6 +228,9 @@ button:hover, .button:hover {
 #top {
 	height: 350px;
 }
+.langswitcher {
+	text-align: right;
+}
 /* ====== IDEA SECTION ====== */
 #idea {
 	padding-bottom: 50px;

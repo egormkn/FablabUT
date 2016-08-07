@@ -7,7 +7,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		{% include 'partials/metadata.html.twig' %}
-		<meta name="application-name" content="{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}">
+		{% set title = (header.title ? header.title|e('html') ~ ' | ' : '') ~ site.title|e('html') %}
+		
+		<meta name="application-name" content="{{ title }}">
 		<meta name="msapplication-square70x70logo" content="small.jpg">
 		<meta name="msapplication-square150x150logo" content="medium.jpg">
 		<meta name="msapplication-wide310x150logo" content="wide.jpg">
@@ -15,24 +17,26 @@
 		<meta name="msapplication-TileColor" content="#1189bd">
 		<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=5; cycle=1"/>
 		
-		<title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+		<title>{{ title }}</title>
 		
 		<link rel="icon" href="{{ url('theme://images/favicon.ico') }}" />
 		<link rel="shortcut icon" href="{{ url('theme://images/favicon.ico') }}" />
 		<link rel="canonical" href="{{ page.url(true, true) }}" />
 		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<!-- <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
+		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />-->
 		
 		{% block stylesheets %}
-			{% do assets.addCss('theme://css/style.css', 103) %}
-			{% do assets.addCss('theme://css/font-awesome.min.css', 100) %}
-			{% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic', 100) %}
+			{% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic') %}
+			{% do assets.addCss('theme://css/style.css') %}
+			{% do assets.addCss('theme://css/font-awesome.min.css') %}
 		{% endblock %}
 		
 		{{ assets.css() }}
 
 		{% block javascripts %}
 			{% do assets.addJs('jquery') %}
-			{% if browser.getBrowser == 'msie' and browser.getVersion <= 9 %}
+			{% if browser.getBrowser == 'msie' and browser.getVersion < 10 %}
 				{% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
 			{% endif %}
 			{% do assets.addJs('theme://js/fabric.js', {'group': 'bottom'}) %}
@@ -40,8 +44,6 @@
 		
 		{{ assets.js('head') }}
 		
-		<!-- <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
-		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />-->
 		{% endblock head %}
 		
 	</head>

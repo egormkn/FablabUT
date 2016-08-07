@@ -4,10 +4,10 @@ var ideaButton = document.getElementById('idea-button');
 function toggleIdea() {
 	if (ideaTextClass.contains('idea-text-visible')) {
 		ideaTextClass.remove('idea-text-visible');
-		ideaButton.innerHTML = 'Подробнее';
+		ideaButton.innerHTML = ideaButton.getAttribute("data-text-show");
 	} else if (!ideaTextClass.contains('idea-text-visible')) {
 		ideaTextClass.add('idea-text-visible');
-		ideaButton.innerHTML = 'Свернуть';
+		ideaButton.innerHTML = ideaButton.getAttribute("data-text-hide");
 	}
 	return false;
 }

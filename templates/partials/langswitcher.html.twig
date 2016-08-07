@@ -1,17 +1,12 @@
-<ul class="langswitcher" style="color:#FFF;">
-{% set langobj = grav['language'] %}
 
-{% for key in langswitcher.languages %}
-
-    {% if key == langswitcher.current %}
-        {% set lang_url = page.url %}
-        {% set active_class = ' active' %}
-    {% else %}
-        {% set lang_url = base_url_simple ~ langobj.getLanguageURLPrefix(key)~langswitcher.page_route ?: '/' %}
-        {% set active_class = '' %}
-    {% endif %}
-
-    <li><a href="{{ lang_url ~ uri.params }}" class="external{{ active_class }}">{{  native_name(key)|capitalize }}</a></li>
-
-{% endfor %}
-</ul>
+			<div class="langswitcher" style="color:#FFF;">
+			
+			{% for key in langswitcher.languages %}
+				{% if key != langswitcher.current %}
+				
+				<a href="{{ '/' ~ key ~ uri.params }}" class="langswitcher-link"><img src="{{ url('theme://images/languages/' ~ key ~ '.png') }}" alt="{{  native_name(key)|capitalize }}" title="{{  native_name(key)|capitalize }}"></a>
+				
+				{% endif %}
+			{% endfor %}
+			
+			</div>

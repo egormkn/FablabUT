@@ -3,20 +3,19 @@
 
 		<section id="idea">
 			<div class="maxwidth">
-				<h1>ФабЛаб - лаборатория для<br>воплощения ваших идей</h1>
-				<div id="idea-text">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				<div class="idea-wrapper">
+					<h1>{{ 'LANDING.SLOGAN'|t }}</h1>
+					<div id="idea-text">
+					
+					{{ page.content }}
+					
+					</div>
+					<button id="idea-button" type="button" data-text-show="{{ 'LEARN_MORE'|t }}" data-text-hide="{{ 'HIDE'|t }}">{{ 'LEARN_MORE'|t }}</button>
 				</div>
-				<button id="idea-button" type="button">Подробнее</button>
 			</div>
 		</section>
 		<section id="activities">
-			<h3 class="section-title">Деятельность</h3>
+			<h3 class="section-title">{{ 'LANDING.ACTIVITIES'|t }}</h3>
 			<div class="activities-wrapper maxwidth">
 				<figure class="activity">
 					<a class="activity-link" href="#">
@@ -88,13 +87,13 @@
 			</div>
 		</section>
 		<section id="courses">
-			<h3 class="section-title">Курсы и мастер-классы</h3>
+			<h3 class="section-title">{{ 'LANDING.COURSES'|t }}</h3>
 			<div class="maxwidth">
 				
 			</div>
 		</section>
 		<section id="news">
-			<h3 class="section-title">Новости</h3>
+			<h3 class="section-title">{{ 'LANDING.NEWS'|t }}</h3>
 			<div class="maxwidth">
 				<figure class="news-article"></figure>
 				<figure class="news-article"></figure>
@@ -123,5 +122,3 @@
 
 	{% endblock %}
 {% endembed %}
-
-

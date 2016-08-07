@@ -1,19 +1,34 @@
 en:
   HEADER:
     MENU:
-      HOME: Homepage
+      HOME: Home
       NEWS: News
-      PROJECTS: Projects
       ARTICLES: Articles
+      SHOP: Shop
       SERVICES: Services
       CONTACTS: Contacts
+  LEARN_MORE: Learn more
+  HIDE: Hide
+  LANDING:
+    SLOGAN: FabLab - a place for the<br>realization of your ideas
+    ACTIVITIES: Activities
+    COURSES: Courses
+    NEWS: News
+      
       
 ru:
   HEADER:
     MENU:
       HOME: Главная
       NEWS: Новости
-      PROJECTS: Проекты
       ARTICLES: Статьи
+      SHOP: Магазин
       SERVICES: Услуги
       CONTACTS: Контакты
+  LEARN_MORE: Подробнее
+  HIDE: Свернуть
+  LANDING:
+    SLOGAN: ФабЛаб - лаборатория для<br>воплощения ваших идей
+    ACTIVITIES: Деятельность
+    COURSES: Курсы и мастер-классы
+    NEWS: Новости
