@@ -1,7 +1,9 @@
-{% extends 'partials/base.html.twig' %}
+{% extends 'partials/newbase.html.twig' %}
 
 {% block content %}
+    {{ page.content }}
     {% for module in page.collection() %}
+        <div>{{ module.menu }}</div>
         {{ module.content }}
     {% endfor %}
 {% endblock %}

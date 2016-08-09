@@ -1,12 +1,4 @@
 en:
-  HEADER:
-    MENU:
-      HOME: Home
-      NEWS: News
-      ARTICLES: Articles
-      SHOP: Shop
-      SERVICES: Services
-      CONTACTS: Contacts
   LEARN_MORE: Learn more
   HIDE: Hide
   LANDING:
@@ -17,14 +9,6 @@ en:
       
       
 ru:
-  HEADER:
-    MENU:
-      HOME: Главная
-      NEWS: Новости
-      ARTICLES: Статьи
-      SHOP: Магазин
-      SERVICES: Услуги
-      CONTACTS: Контакты
   LEARN_MORE: Подробнее
   HIDE: Свернуть
   LANDING:

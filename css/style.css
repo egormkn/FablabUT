@@ -47,6 +47,9 @@ h1, h2, h3, h4, h5, h6 {
 	-ms-transition: width 0.2s ease 0s;
 	transition: width 0.2s ease 0s;
 }
+.whitepage {
+	background: #f4f4f4;
+}
 .center {
 	text-align: center;
 }
@@ -456,8 +459,13 @@ button:hover, .button:hover {
 	.logo-link {
 		display: none;
 	}
-	#idea {
-		background: url('../images/logo.png') center 69px no-repeat;
+	#top {
+		background: url('../images/logo.png') center 90% no-repeat;
+	}
+	.whitepage #top {
+		background: transparent none repeat scroll 0% 0%;
+		height: auto;
+		padding-top: 42px;
 	}
 	#feedback .input-wrapper {
 		width: auto;
@@ -471,8 +479,8 @@ button:hover, .button:hover {
 	.maxwidth {
 		width: 300px;
 	}
-	#idea {
-		background-position: center 119px;
+	#top {
+		background-position: center bottom;
 	}
 	#idea h1 {
 		font-size: 20px;
@@ -484,7 +492,7 @@ button:hover, .button:hover {
 		padding-right: 10px;
 	}
 }
-@media only all and (min-width: 1200px) {
+@media only all and (min-width: 1230px) {
 	.maxwidth {
 		width: 1200px;
 	}

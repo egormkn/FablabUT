@@ -1,4 +1,16 @@
-
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		
 {% for meta in page.metadata %}
 		<meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
 {% endfor %}
+
+		<meta name="application-name" content="{{ title }}">
+		<meta name="msapplication-square70x70logo" content="small.jpg">
+		<meta name="msapplication-square150x150logo" content="medium.jpg">
+		<meta name="msapplication-wide310x150logo" content="wide.jpg">
+		<meta name="msapplication-square310x310logo" content="large.jpg">
+		<meta name="msapplication-TileColor" content="#1189bd">
+		<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://fablabut.ru/?feed=rss2&amp;id=5; cycle=1"/>
+		
