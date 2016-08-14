@@ -1,11 +1,43 @@
 
 		<footer id="footer">
-			<div class="maxwidth">
-				<div id="vk_groups"></div>
+			<div class="footer-top">
+				<div class="maxwidth">
+					{#
+					<div style="float: right; ">
+					
+					{% if config.plugins.login.enabled %}
+					{% include 'partials/login-status.html.twig' %}
+					{% endif %}
+					
+					{% if config.plugins.langswitcher.enabled %}
+					{% include 'partials/langswitcher.html.twig' %}
+					{% endif %}
+					
+					</div>#}
+					
+					<div class="footer-info">
+						<h2 class="footer-title">{{ site.title }}</h2>
+						<div class="footer-email"><a href="#">admin@fablabut.ru</a></div>
+						<div class="footer-phone"><a href="#">+7 (999) 123-45-67</a></div>
+						<div class="footer-address"><a href="#">Тюмень, Ленина 25</a></div>
+					</div>
+					<div class="footer-social">
+						<h2 class="footer-title">Мы в соцсетях:</h2>
+						<div class="footer-social-links">
+							<a href="http://vk.com/fablab_tsu" target="_blank" class="social-button social-vk"></a>
+							<a href="#" target="_blank" class="social-button social-youtube"></a>
+							<a href="#" target="_blank" class="social-button social-instagram"></a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="maxwidth">
+					<div class="footer-copyright">&copy; Digital fabrication laboratory, LLC</div>
+					<div class="footer-developers">Разработка сайта: <a href="http://gear.su/">Gear.SU</a></div>
+				</div>
 			</div>
 		</footer>
 		
-		<script type="text/javascript" src="https://vk.com/js/api/openapi.js?125"></script>
-		<script type="text/javascript">
-		VK.Widgets.Group("vk_groups", {redesign: 1, mode: 3, width: "300", height: "400", color1: '303135', color2: 'FFFFFF', color3: 'FFFFFF'}, 65229391);
-		</script>
+		

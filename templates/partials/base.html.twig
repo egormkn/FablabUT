@@ -1,21 +1,25 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set modular = (page.modular or page.template == 'modular') %}
+{{dump(page)}}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getLanguage ?: grav.language.getDefault }}">
 	<head>
+		
 		{% block head %}
 		{% include 'partials/metadata.html.twig' %}
 		{% set title = (header.title ? header.title|e('html') ~ ' | ' : '') ~ site.title|e('html') %}
 		
 		<title>{{ title }}</title>
 		
-		<link rel="icon" href="{{ url('theme://images/favicon.ico') }}" />
-		<link rel="shortcut icon" href="{{ url('theme://images/favicon.ico') }}" />
+		<link rel="icon" href="{{ url('theme://images/favicon.ico') }}?v=2" />
+		<link rel="shortcut icon" href="{{ url('theme://images/favicon.ico') }}?v=2" />
 		<link rel="canonical" href="{{ page.url(true, true) }}" />
 		
 		<!-- <link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента" href="http://fablabut/?feed=rss2" />
 		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />-->
 		
 		{% block stylesheets %}
+			{% do assets.addCss('theme://css/normalize.css') %}
 			{% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic') %}
 			{% do assets.addCss('theme://css/style.css') %}
 			{% do assets.addCss('theme://css/font-awesome.min.css') %}
@@ -24,7 +28,7 @@
 		{{ assets.css() }}
 
 		{% block javascripts %}
-			{% do assets.addJs('jquery') %}
+			{% do assets.addJs('jquery', 200) %}
 			{% if browser.getBrowser == 'msie' and browser.getVersion < 10 %}
 				{% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
 			{% endif %}
@@ -37,18 +41,22 @@
 		
 	</head>
 	
-	<body {% if page.header.body_classes %}class="{{ page.header.body_classes }}"{% endif %}>
+	<body class="page-{{ page.slug }} {% if not modular %}not{% endif %}modular{% if page.header.body_classes %} {{ page.header.body_classes }}{% endif %}">
+		<div class="background">
 		{% include 'partials/header.html.twig' %}
-		<!-- {{ class }} -->
-		<!-- {{ page.template }} -->
-		{% if page.template != 'modular' %}
-		<div class="whitepage maxwidth">
+		{% if not modular %}
+		<div class="maxwidth whitepage-wrapper">
+		<div class="whitepage">
 		{% endif %}
 		{% block content %}{% endblock %}
-		{% if page.template != 'modular' %}
+		{% if not modular %}
+		</div>
 		</div>
 		{% endif %}
+		</div>
 		{% include 'partials/footer.html.twig' %}
+		{% block bottom %}
 		{{ assets.js('bottom') }}
+		{% endblock %}
 	</body>
 </html>

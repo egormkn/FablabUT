@@ -6,10 +6,13 @@
 {{ page.content }}
 </div>
 
+{% for i in range(0, 5) %}
+<figure class="partner">
+	<a class="partner-link" href="#">
+		<img src="{{ url('theme://images/square-image.jpg') }}" alt="Дмитрий Яковлев" width="200">
+	</a>
+</figure>
+{% endfor %}
 
-<figure class="news-article"></figure>
-<figure class="news-article"></figure>
-<figure class="news-article news-article-last"></figure>
 <div class="clear"></div>
-<a id="news-button" class="button news-button" href="#">Все новости</a>
 {% endblock %}

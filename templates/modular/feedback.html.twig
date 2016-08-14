@@ -1,17 +1,21 @@
-<section id="feedback">
-	<h3 class="section-title">Напишите нам</h3>
-	<div class="maxwidth">
-		<form>
-			<div class="input-wrapper floatleft"><div class="input-placeholder">Имя</div><input type="text" autocorrect="off" autocapitalize="words"></div>
-			<div class="input-wrapper floatright"><div class="input-placeholder">Email или телефон</div><input type="text"></div>
-			<div class="clear"></div>
-			<div class="textarea-wrapper">
-				<div class="textarea-placeholder">Сообщение</div>
-				<textarea></textarea>
-			</div>
-			<div class="center">
-				<button id="feedback-button" type="button">Отправить сообщение</button>
-			</div>
-		</form>
+{% extends 'modular/modular-block.html.twig' %}
+
+{% block content %}
+<div class="textblock modular-section-header">
+<h3 class="section-title">{{ page.title }}</h3>
+{{ page.content }}
+</div>
+
+<form>
+	<div class="input-wrapper floatleft"><div class="input-placeholder">Имя</div><input type="text" autocorrect="off" autocapitalize="words"></div>
+	<div class="input-wrapper floatright"><div class="input-placeholder">Email или телефон</div><input type="text"></div>
+	<div class="clear"></div>
+	<div class="textarea-wrapper">
+		<div class="textarea-placeholder">Сообщение</div>
+		<textarea></textarea>
 	</div>
-</section>
+	<div class="center">
+		<button id="feedback-button" type="button">Отправить сообщение</button>
+	</div>
+</form>
+{% endblock %}

@@ -4,7 +4,7 @@
 			{% for key in langswitcher.languages %}
 				{% if key != langswitcher.current %}
 				
-				<a href="{{ '/' ~ key ~ uri.params }}" class="langswitcher-link"><img src="{{ url('theme://images/languages/' ~ key ~ '.png') }}" alt="{{  native_name(key)|capitalize }}" title="{{  native_name(key)|capitalize }}"></a>
+				<a href="{{ '/' ~ key ~ uri.params }}" class="langswitcher-link"><img src="{{ url('theme://images/languages/' ~ key ~ '.png') }}" alt="{{  native_name(key)|capitalize }}" title="{{  native_name(key)|capitalize }}"> {{  native_name(key)|capitalize }}</a>
 				
 				{% endif %}
 			{% endfor %}

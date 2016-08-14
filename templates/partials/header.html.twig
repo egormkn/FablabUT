@@ -5,14 +5,4 @@
 				<a class="logo-link" href="{{ base_url == '' ? '/' : base_url }}"><img id="logo" src="{{ url('theme://images/logo.png') }}" data-src-big="{{ url('theme://images/logo.png') }}" data-src-small="{{ url('theme://images/logo-small.png') }}" alt="{{ config.site.title }}" title="{{ config.site.title }}"></a>
 			</nav>
 		</header>
-		<div id="top" class="maxwidth">
-		{#
-		{% if config.plugins.login.enabled %}
-        {% include 'partials/login-status.html.twig' %}
-		{% endif %}
-		
-		{% if config.plugins.langswitcher.enabled %}
-		{% include 'partials/langswitcher.html.twig' %}
-		{% endif %}
-		#}
-		</div>
+		<div id="top" class="maxwidth"></div>

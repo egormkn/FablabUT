@@ -1,18 +1,19 @@
-var ideaTextClass = document.getElementById('idea-text').classList;
-var ideaButton = document.getElementById('idea-button');
-
-function toggleIdea() {
-	if (ideaTextClass.contains('idea-text-visible')) {
-		ideaTextClass.remove('idea-text-visible');
-		ideaButton.innerHTML = ideaButton.getAttribute("data-text-show");
-	} else if (!ideaTextClass.contains('idea-text-visible')) {
-		ideaTextClass.add('idea-text-visible');
-		ideaButton.innerHTML = ideaButton.getAttribute("data-text-hide");
+(function ideaToggle(ideaText, ideaButton){
+	if (!ideaText || !ideaButton) {
+		return false;
 	}
-	return false;
-}
+	ideaButton.onclick = function () {
+		if (ideaText.classList.contains('idea-text-visible')) {
+			ideaText.classList.remove('idea-text-visible');
+			ideaButton.innerHTML = ideaButton.getAttribute("data-text-show");
+		} else if (!ideaText.classList.contains('idea-text-visible')) {
+			ideaText.classList.add('idea-text-visible');
+			ideaButton.innerHTML = ideaButton.getAttribute("data-text-hide");
+		}
+		return false;
+	};
+})(document.getElementById('idea-text'), document.getElementById('idea-button'));
 
-ideaButton.onclick = toggleIdea;
 
 (function placeholder(){
 	function bindActions(wrapper, tag) {
@@ -72,24 +73,30 @@ ideaButton.onclick = toggleIdea;
 	});
 })();
 
-var headerClass = document.getElementById('header').classList;
-
-function fixHeader() {
-	if (document.documentElement.clientWidth < 630) {
+(function headerFix(header) {
+	if (!header) {
 		return false;
 	}
-	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-	var logo = document.getElementById('logo');
-	if (headerClass.contains('header-fixed') && scrolled < 148) {
-		headerClass.remove('header-fixed');
-		logo.src = logo.getAttribute("data-src-big");
-	} else if (!headerClass.contains('header-fixed') && scrolled >= 148) {
-		headerClass.add('header-fixed');
-		setTimeout(function() {
-			logo.src = logo.getAttribute("data-src-small");
-		}, 100);
-	}
-}
 
-fixHeader();
-window.onscroll = fixHeader;
+	function fixHeader() {
+		if (document.documentElement.clientWidth < 630) {
+			return false;
+		}
+		var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+		var logo = document.getElementById('logo');
+		if (header.classList.contains('header-fixed') && scrolled < 148) {
+			header.classList.remove('header-fixed');
+			logo.src = logo.getAttribute("data-src-big");
+		} else if (!header.classList.contains('header-fixed') && scrolled >= 148) {
+			header.classList.add('header-fixed');
+			setTimeout(function() {
+				logo.src = logo.getAttribute("data-src-small");
+			}, 100);
+		}
+	}
+
+	fixHeader();
+	window.onscroll = fixHeader;
+})(document.getElementById('header'));
+
+
