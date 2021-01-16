@@ -1,0 +1,19 @@
+{% extends 'modular/modular-block.html.twig' %}
+
+{% block content %}
+<h1>{% for next in page.header.message %}{% if loop.index0 != 0 %}<br>{% endif %}{{ next.line }}{% endfor %}</h1>
+
+{% if page.content %}
+<div class="textblock message-text" id="message{{ page.slug }}">
+{{ page.content }}
+</div>
+{% endif %}
+
+{% if page.header.link %}<form action="{{ page.header.link }}">{% endif %}
+<button id="button{{ page.slug }}" type="{% if page.header.link %}submit{% else %}button{% endif %}" data-message-show="{{ page.header.more|default('Learn more') }}" data-message-hide="{{ page.header.hide|default('Hide') }}">{{ page.header.more|default('Learn more') }}</button>
+{% if page.header.link %}</form>{% endif %}
+
+{% if page.content %}
+<script type="text/javascript">messageToggle('message{{ page.slug }}', 'button{{ page.slug }}');</script>
+{% endif %}
+{% endblock %}

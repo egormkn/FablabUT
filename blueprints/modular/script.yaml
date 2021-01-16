@@ -1,4 +1,4 @@
-title: Text
+title: Script
 '@extends': default
 
 form:
@@ -12,23 +12,22 @@ form:
                 column1:
                   fields:
                     name:
-                      default: modular/text
+                      default: modular/script
                       '@data-options': '\Grav\Common\Page\Pages::modularTypes'
             overrides:
               fields:
                 header.template:
-                  default: modular/text
+                  default: modular/script
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         content:
           fields:
             uploads:
-              label: Page Media (first one will be displayed next to your content)
-            header.image_align:
-              type: select
-              label: Image position
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-              type:
+              type: ignore
+            header.script:
+              type: text
+              label: Script html tag
+            header.height:
+              type: text
+              label: Block height
+              validate:
+                type: int

@@ -1,0 +1,24 @@
+{% extends 'modular/modular-block.html.twig' %}
+
+{% block content %}
+<div class="textblock section-header">
+<h3 class="section-title">{{ page.title }}</h3>
+{{ page.content }}
+</div>
+
+{% for figure in page.header.figures %}<figure class="showcase-figure showcase-{% if not page.header.decoration %}no{% endif %}decor{% if page.header.valign %} showcase-middle{% endif %}">
+	<a class="showcase-link"{% if figure.url %} href="{{ figure.url }}"{% if figure.newtab %} target="_blank"{% endif %}{% endif %}>
+		{% if page.media[figure.image] %}
+        <div class="showcase-image">
+			{% if page.header.decoration %}<div class="showcase-gear"></div>{% endif %}
+			<img src="{{ page.header.decoration ? page.media[figure.image].cropZoom(112, 112).url() : page.media[figure.image].url() }}" alt="{{ figure.title }}">
+		</div>
+        {% endif %}
+		{% if figure.title %}<h6 class="showcase-title">{{ figure.title }}</h6>{% endif %}
+	</a>
+	{% if figure.description and figure.title %}<div class="showcase-hr"></div>{% endif %}
+	{% if figure.description %}<p class="showcase-description">{{ figure.description }}</p>{% endif %}
+</figure>{% endfor %}
+
+{% endblock %}
+

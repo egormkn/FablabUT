@@ -77,9 +77,12 @@
 	if (!header) {
 		return false;
 	}
-
+    var timeout;
 	function fixHeader() {
 		if (document.documentElement.clientWidth < 630) {
+			if (header.classList.contains('header-fixed')) {
+				header.classList.remove('header-fixed');
+			}
 			return false;
 		}
 		var scrolled = window.pageYOffset || document.documentElement.scrollTop;
@@ -87,9 +90,11 @@
 		if (header.classList.contains('header-fixed') && scrolled < 148) {
 			header.classList.remove('header-fixed');
 			logo.src = logo.getAttribute("data-src-big");
+		    clearTimeout(timeout);
 		} else if (!header.classList.contains('header-fixed') && scrolled >= 148) {
 			header.classList.add('header-fixed');
-			setTimeout(function() {
+		    clearTimeout(timeout);
+			timeout = setTimeout(function() {
 				logo.src = logo.getAttribute("data-src-small");
 			}, 100);
 		}

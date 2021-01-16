@@ -5,6 +5,57 @@ form:
   fields:
     tabs:
       fields:
+        content:
+          fields:
+            spacer:
+              type: spacer
+              underline: true
+            header.decoration:
+              type: toggle
+              label: Decorations
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            header.valign:
+              type: toggle
+              label: Vertical align
+              highlight: 1
+              default: 0
+              options:
+                0: Top
+                1: Middle
+              validate:
+                type: bool
+            header.figures:
+              name: figures
+              type: list
+              label: Items
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .image:
+                  type: pagemediaselect
+                  label: Image
+                .description:
+                  type: textarea
+                  label: Description
+                .url:
+                  type: text
+                  label: URL
+                .newtab:
+                  type: toggle
+                  label: Open in new tab
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
         advanced:
           fields:
             columns:
@@ -19,28 +70,3 @@ form:
                 header.template:
                   default: modular/showcase
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-        buttons:
-          type: tab
-          title: Buttons
-          fields:
-            header.buttons:
-              name: buttons
-              type: list
-              label: Buttons
-              fields:
-                .text:
-                  type: text
-                  label: Text
-                .url:
-                  type: text
-                  label: URL
-                .primary:
-                  type: toggle
-                  label: Primary
-                  highlight: 1
-                  default: 1
-                  options:
-                      1: 'Yes'
-                      0: 'No'
-                  validate:
-                      type: bool

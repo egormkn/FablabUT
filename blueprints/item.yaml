@@ -1,4 +1,4 @@
-title: Item
+title: Catalogue Item
 '@extends':
     type: default
     context: blueprints://pages
@@ -6,8 +6,17 @@ title: Item
 form:
   fields:
     tabs:
-
       fields:
+        content:
+          fields:
+            spacer:
+              type: spacer
+              underline: true
+            header.image:
+              type: pagemediaselect
+              label: Main image
+              validate:
+                required: true
         blog:
           type: tab
           title: Blog Item

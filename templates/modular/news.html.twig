@@ -1,15 +1,28 @@
 {% extends 'modular/modular-block.html.twig' %}
 
 {% block content %}
-<div class="textblock modular-section-header clear">
+<div class="textblock section-header clear">
 <h3 class="section-title">{{ page.title }}</h3>
 {{ page.content }}
 </div>
 
+{#{% for post in page.find('/news').children.order('date', 'desc').slice(0, 3) %}
+<figure class="news-article{% if loop.last %} news-article-last{% endif %}">
+<a class="news-link" href="{{ post.url }}">
+    <div class="news-image-wrapper">
+        <img class="news-image" src="{{ post.media[post.header.image].cropZoom(352, 198).url() }}" alt="{{ post.title }}">
+    </div>
 
-<figure class="news-article"></figure>
-<figure class="news-article"></figure>
-<figure class="news-article news-article-last"></figure>
+    <div class="news-date">
+        <div class="news-date-day">24</div>
+        <div class="news-date-month">Авг</div>
+    </div>
+
+    <div class="news-title">{{ post.title }}</div>
+</a>
+</figure>
+{% endfor %}#}
+
 <div class="clear"></div>
-<a id="news-button" class="button news-button" href="#">Все новости</a>
+<a id="news-button" class="button news-button" href="/news">Все новости</a>
 {% endblock %}

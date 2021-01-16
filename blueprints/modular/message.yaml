@@ -1,0 +1,44 @@
+title: Message
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            spacer:
+              type: spacer
+              underline: true
+            header.message:
+              name: lines
+              type: list
+              label: Slogan
+              btnLabel: New line
+              fields:
+                .line:
+                  type: text
+                  label: Text
+            header.more:
+              type: text
+              label: More button text
+            header.hide:
+              type: text
+              label: Hide button text
+            header.link:
+              type: text
+              label: Button link for old browsers
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/message
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/message
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'

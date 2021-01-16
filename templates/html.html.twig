@@ -1,8 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-
 <div class="whitepage">
 	{{ page.content }}
+	
+	{{ page.header.html }}
 </div>
 {% endblock %}

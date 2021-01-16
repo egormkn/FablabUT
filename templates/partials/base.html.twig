@@ -1,13 +1,12 @@
-{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
-{% set modular = (page.modular or page.template == 'modular') %}
-{{dump(page)}}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getLanguage ?: grav.language.getDefault }}">
 	<head>
+		{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+		{% set modular = (page.modular or page.template == 'modular') %}
 		
 		{% block head %}
-		{% include 'partials/metadata.html.twig' %}
 		{% set title = (header.title ? header.title|e('html') ~ ' | ' : '') ~ site.title|e('html') %}
+		{% include 'partials/metadata.html.twig' with {'title': title} %}
 		
 		<title>{{ title }}</title>
 		
@@ -19,16 +18,16 @@
 		<link rel="alternate" type="application/rss+xml" title="ЦМИТ ФабЛаб ТюмГУ &raquo; Лента комментариев" href="http://fablabut/?feed=comments-rss2" />-->
 		
 		{% block stylesheets %}
-			{% do assets.addCss('theme://css/normalize.css') %}
-			{% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic') %}
-			{% do assets.addCss('theme://css/style.css') %}
-			{% do assets.addCss('theme://css/font-awesome.min.css') %}
+			{% do assets.addCss('theme://css/normalize.css', 200) %}
+			{% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic', 200) %}
+			{% do assets.addCss('theme://css/style.css', 100) %}
 		{% endblock %}
 		
 		{{ assets.css() }}
 
 		{% block javascripts %}
 			{% do assets.addJs('jquery', 200) %}
+            {% do assets.addJs('theme://js/fabric_top.js', 150) %}
 			{% if browser.getBrowser == 'msie' and browser.getVersion < 10 %}
 				{% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
 			{% endif %}
@@ -45,15 +44,16 @@
 		<div class="background">
 		{% include 'partials/header.html.twig' %}
 		{% if not modular %}
-		<div class="maxwidth whitepage-wrapper">
-		<div class="whitepage">
+		<div class="maxwidth page-wrapper">
 		{% endif %}
+		
 		{% block content %}{% endblock %}
+		
 		{% if not modular %}
 		</div>
-		</div>
 		{% endif %}
 		</div>
+		
 		{% include 'partials/footer.html.twig' %}
 		{% block bottom %}
 		{{ assets.js('bottom') }}

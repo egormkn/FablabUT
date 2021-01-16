@@ -1,0 +1,25 @@
+{% extends 'modular/modular-block.html.twig' %}
+
+{% block content %}
+<div class="textblock section-header">
+<h3 class="section-title">{{ page.title }}</h3>
+</div>
+
+
+<div class="textblock">
+{% if page.header.column %}
+
+<div class="floatleft" style="width: 49%;">
+{{ page.header.column }}
+</div>
+<div class="floatright" style="width: 49%;">
+{{ page.content }}
+</div>
+<div class="clear"></div>
+
+{% else %}
+{{ page.content }}
+{% endif %}
+</div>
+
+{% endblock %}

@@ -1,6 +1,6 @@
-<section class="modular-section" id="section{{ page.slug }}">
+<section class="modular-section section_{{ page.template|split('/')|last }}" id="section{{ page.slug }}">
 	<div class="maxwidth">
-		<div class="modular-wrapper wrapper{{ page.slug }}">
+		<div class="modular-wrapper">
 			{% block content %}{% endblock %}
 		</div>
 	</div>
